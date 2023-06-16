@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalendorius</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        .flex-box {
+            display: flex;
+            flex-wrap: wrap;
+            text-align: center;
+        }
+
+        .flex-box-2 {
+            display: flex;
+        }
+
+        .flex-box-2 table {
+            border: none;
+            text-align: left;
+            margin-left: 40px;
+            font-size: 15px;
+        }
+
+        .calendar-example {
+            width: 880px;
+        }
+
+        .flex-box table {
+            border: 1px solid black;
+            width: 220px;
+            height: 200px;
+            flex-basis: 220px;
+            margin-right: 0;
+        }
+
+        .flex-box thead {
+            display: block !important;
+        }
+
+        .flex-box td {
+            display: inline-block;
+            min-width: 25px;
+        }
+
+        .flex-box table>tbody>tr:first-child {
+            font-weight: bold;
+        }
+
+        .holiday {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="calendar-example">
+        <h1>2023 CALENDAR</h1>
+        <h3>www.wiki-calendar.com</h3>
+        <div class="flex-box">
+            <table style="border-right: 0;">
+                <tbody>
+                    <tr>
+                        <td>JANUARY</td>
+                    </tr>
+                    <tr style="font-weight: bold;">
+                        <td>S</td>
+                        <td>M</td>
+                        <td>T</td>
+                        <td>M</td>
+                        <td>T</td>
+                        <td>F</td>
+                        <td>S</td>
+                    </tr>
+                    <tr>
+                        <td class="holiday">1</td>
+                        <td class="holiday">2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>7</td>
+                    </tr>
+                    <tr>
+                        <td class="holiday">8</td>
+                        <td>9</td>
+                        <td>10</td>
+                        <td>11</td>
+                        <td>12</td>
+                        <td>13</td>
+                        <td>14</td>
+                    </tr>
+                    <tr>
+                        <td class="holiday">15</td>
+                        <td class="holiday">16</td>
+                        <td>17</td>
+                        <td>18</td>
+                        <td>19</td>
+                        <td>20</td>
+                        <td>21</td>
+                    </tr>
+                    <tr>
+                        <td class="holiday">22</td>
+                        <td>23</td>
+                        <td>24</td>
+                        <td>25</td>
+                        <td>26</td>
+                        <td>27</td>
+                        <td>28</td>
+                    </tr>
+                    <tr>
+                        <td class="holiday">29</td>
+                        <td>30</td>
+                        <td>31</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+            <table style="border-right: 0;">
+                <tbody>
+                    <tr>
+                        <td>FEBRUARY</td>
+                    </tr>
+                    <tr style="font-weight: bold;">
+                        <td>S</td>
+                        <td>M</td>
+                        <td>T</td>
+                        <td>M</td>
+                        <td>T</td>
+                        <td>F</td>
+                        <td>S</td>
+                    </tr>
+                    <tr>
+                        <td class="holiday"></td>
+                        <td></td>
+                        <td></td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                    </tr>
+                    <tr>
+                        <td class="holiday">5</td>
+                        <td>6</td>
+                        <td>7</td>
+                        <td>8</td>
+                        <td>9</td>
+                        <td>10</td>
+                        <td>11</td>
+                    </tr>
+                    <tr>
+                        <td class="holiday">12</td>
+                        <td>13</td>
+                        <td>14</td>
+                        <td>15</td>
+                        <td>16</td>
+                        <td>17</td>
+                        <td>18</td>
+                    </tr>
+                    <tr>
+                        <td class="holiday">19</td>
+                        <td class="holiday">20</td>
+                        <td>21</td>
+                        <td>22</td>
+                        <td>23</td>
+                        <td>24</td>
+                        <td>25</td>
+                    </tr>
+                    <tr>
+                        <td class="holiday">26</td>
+                        <td>27</td>
+                        <td>28</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+            <table style="border-right: 0;">
+                <tbody>
+                    <tr>
+                        <td>MARCH</td>
+                    </tr>
+                    <tr style="font-weight: bold;">
+                        <td>S</td>
+                        <td>M</td>
+                        <td>T</td>
+                        <td>M</td>
+                        <td>T</td>
+                        <td>F</td>
+                        <td>S</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                    </tr>
+                    <tr>
+                        <td class="holiday">5</td>
+                        <td>6</td>
+                        <td>7</td>
+                        <td>8</td>
+                        <td>9</td>
+                        <td>10</td>
+                        <td>11</td>
+                    </tr>
+                    <tr>
+                        <td class="holiday">12</td>
+                        <td>13</td>
+                        <td>14</td>
+                        <td>15</td>
+                        <td>16</td>
+                        <td>17</td>
+                        <td>18</td>
+                    </tr>
+                    <tr>
+                        <td class="holiday">19</td>
+                        <td>20</td>
+                        <td>21</td>
+                        <td>22</td>
+                        <td>23</td>
+                        <td>24</td>
+                        <td>25</td>
+                    </tr>
+                    <tr>
+                        <td class="holiday">26</td>
+                        <td>27</td>
+                        <td>28</td>
+                        <td>29</td>
+                        <td>30</td>
+                        <td>31</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>APRIL</td>
+                    </tr>
+                    <tr style="font-weight: bold;">
+                        <td>S</td>
+                        <td>M</td>
+                        <td>T</td>
+                        <td>M</td>
+                        <td>T</td>
+                        <td>F</td>
+                        <td>S</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td class="holiday">2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>7</td>
+                        <td>8</td>
+                    </tr>
+                    <tr>
+                        <td class="holiday">9</td>
+                        <td>10</td>
+                        <td>11</td>
+                        <td>12</td>
+                        <td>13</td>
+                        <td>14</td>
+                        <td>15</td>
+                    </tr>
+                    <tr>
+                        <td class="holiday">16</td>
+                        <td>17</td>
+                        <td>18</td>
+                        <td>19</td>
+                        <td>20</td>
+                        <td>21</td>
+                        <td>22</td>
+                    </tr>
+                    <tr>
+                        <td class="holiday">23</td>
+                        <td>24</td>
+                        <td>25</td>
+                        <td>26</td>
+                        <td>27</td>
+                        <td>28</td>
+                        <td>29</td>
+                    </tr>
+                    <tr>
+                        <td class="holiday">30</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+            <table style="border-top: 0px;border-bottom: 0px;border-right: 0px;">
+                <tbody>
+                    <tr>
+                        <td>MAY</td>
+                    </tr>
+                    <tr style="font-weight: bold;">
+                        <td>S</td>
+                        <td>M</td>
+                        <td>T</td>
+                        <td>M</td>
+                        <td>T</td>
+                        <td>F</td>
+                        <td>S</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td class="holiday">7</td>
+                        <td>8</td>
+                        <td>9</td>
+                        <td>10</td>
+                        <td>11</td>
+                        <td>12</td>
+                        <td>13</td>
+                    </tr>
+                    <tr>
+                        <td class="holiday">14</td>
+                        <td>15</td>
+                        <td>16</td>
+                        <td>17</td>
+                        <td>18</td>
+                        <td>19</td>
+                        <td>20</td>
+                    </tr>
+                    <tr>
+                        <td class="holiday">21</td>
+                        <td>22</td>
+                        <td>23</td>
+                        <td>24</td>
+                        <td>25</td>
+                        <td>26</td>
+                        <td>27</td>
+                    </tr>
+                    <tr>
+                        <td class="holiday">28</td>
+                        <td class="holiday">29</td>
+                        <td>30</td>
+                        <td>31</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+            <table style="border-top: 0px;border-bottom: 0px;border-right: 0;">
+                <tbody>
+                    <tr>
+                        <td>JUNE</td>
+                    </tr>
+                    <tr style="font-weight: bold;">
+                        <td>S</td>
+                        <td>M</td>
+                        <td>T</td>
+                        <td>M</td>
+                        <td>T</td>
+                        <td>F</td>
+                        <td>S</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td class="holiday">4</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>7</td>
+                        <td>8</td>
+                        <td>9</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td class="holiday">11</td>
+                        <td>12</td>
+                        <td>13</td>
+                        <td>14</td>
+                        <td>15</td>
+                        <td>16</td>
+                        <td>17</td>
+                    </tr>
+                    <tr>
+                        <td class="holiday">18</td>
+                        <td class="holiday">19</td>
+                        <td>20</td>
+                        <td>21</td>
+                        <td>22</td>
+                        <td>23</td>
+                        <td>24</td>
+                    </tr>
+                    <tr>
+                        <td class="holiday">25</td>
+                        <td>26</td>
+                        <td>27</td>
+                        <td>28</td>
+                        <td>29</td>
+                        <td>30</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+            <table style="border-top: 0px;border-bottom: 0px;border-right: 0;">
+                <tbody>
+                    <tr>
+                        <td>JULY</td>
+                    </tr>
+                    <tr style="font-weight: bold;">
+                        <td>S</td>
+                        <td>M</td>
+                        <td>T</td>
+                        <td>M</td>
+                        <td>T</td>
+                        <td>F</td>
+                        <td>S</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td class="holiday">2</td>
+                        <td>3</td>
+                        <td class="holiday">4</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>7</td>
+                        <td>8</td>
+                    </tr>
+                    <tr>
+                        <td class="holiday">9</td>
+                        <td>10</td>
+                        <td>11</td>
+                        <td>12</td>
+                        <td>13</td>
+                        <td>14</td>
+                        <td>15</td>
+                    </tr>
+                    <tr>
+                        <td class="holiday">16</td>
+                        <td>17</td>
+                        <td>18</td>
+                        <td>19</td>
+                        <td>20</td>
+                        <td>21</td>
+                        <td>22</td>
+                    </tr>
+                    <tr>
+                        <td class="holiday">23</td>
+                        <td>24</td>
+                        <td>25</td>
+                        <td>26</td>
+                        <td>27</td>
+                        <td>28</td>
+                        <td>29</td>
+                    </tr>
+                    <tr>
+                        <td class="holiday">30</td>
+                        <td>31</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+            <table style="border-top: 0px;border-bottom: 0px;">
+                <tbody>
+                    <tr>
+                        <td>AUGUST</td>
+                    </tr>
+                    <tr style="font-weight: bold;">
+                        <td>S</td>
+                        <td>M</td>
+                        <td>T</td>
+                        <td>M</td>
+                        <td>T</td>
+                        <td>F</td>
+                        <td>S</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td class="holiday">6</td>
+                        <td>7</td>
+                        <td>8</td>
+                        <td>9</td>
+                        <td>10</td>
+                        <td>11</td>
+                        <td>12</td>
+                    </tr>
+                    <tr>
+                        <td class="holiday">13</td>
+                        <td>14</td>
+                        <td>15</td>
+                        <td>16</td>
+                        <td>17</td>
+                        <td>18</td>
+                        <td>19</td>
+                    </tr>
+                    <tr>
+                        <td class="holiday">20</td>
+                        <td>21</td>
+                        <td>22</td>
+                        <td>23</td>
+                        <td>24</td>
+                        <td>25</td>
+                        <td>26</td>
+                    </tr>
+                    <tr>
+                        <td class="holiday">27</td>
+                        <td>28</td>
+                        <td>29</td>
+                        <td>30</td>
+                        <td>31</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+            <table style="border-right: 0;">
+                <tbody>
+                    <tr>
+                        <td>SEPTEMBER</td>
+                    </tr>
+                    <tr style="font-weight: bold;">
+                        <td>S</td>
+                        <td>M</td>
+                        <td>T</td>
+                        <td>M</td>
+                        <td>T</td>
+                        <td>F</td>
+                        <td>S</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>1</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td class="holiday">3</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>7</td>
+                        <td>8</td>
+                        <td>9</td>
+                    </tr>
+                    <tr>
+                        <td class="holiday">10</td>
+                        <td>11</td>
+                        <td>12</td>
+                        <td>13</td>
+                        <td>14</td>
+                        <td>15</td>
+                        <td>16</td>
+                    </tr>
+                    <tr>
+                        <td class="holiday">17</td>
+                        <td>18</td>
+                        <td>19</td>
+                        <td>20</td>
+                        <td>21</td>
+                        <td>22</td>
+                        <td>23</td>
+                    </tr>
+                    <tr>
+                        <td class="holiday">24</td>
+                        <td>25</td>
+                        <td>26</td>
+                        <td>27</td>
+                        <td>28</td>
+                        <td>29</td>
+                        <td>30</td>
+                    </tr>
+                </tbody>
+            </table>
+            <table style="border-right: 0;">
+                <tbody>
+                    <tr>
+                        <td>OCTOBER</td>
+                    </tr>
+                    <tr style="font-weight: bold;">
+                        <td>S</td>
+                        <td>M</td>
+                        <td>T</td>
+                        <td>M</td>
+                        <td>T</td>
+                        <td>F</td>
+                        <td>S</td>
+                    </tr>
+                    <tr>
+                        <td class="holiday">1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>7</td>
+                    </tr>
+                    <tr>
+                        <td class="holiday">8</td>
+                        <td class="holiday">9</td>
+                        <td>10</td>
+                        <td>11</td>
+                        <td>12</td>
+                        <td>13</td>
+                        <td>14</td>
+                    </tr>
+                    <tr>
+                        <td class="holiday">15</td>
+                        <td>16</td>
+                        <td>17</td>
+                        <td>18</td>
+                        <td>19</td>
+                        <td>20</td>
+                        <td>21</td>
+                    </tr>
+                    <tr>
+                        <td class="holiday">22</td>
+                        <td>23</td>
+                        <td>24</td>
+                        <td>25</td>
+                        <td>26</td>
+                        <td>27</td>
+                        <td>28</td>
+                    </tr>
+                    <tr>
+                        <td class="holiday">29</td>
+                        <td>30</td>
+                        <td>31</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+            <table style="border-right: 0;">
+                <tbody>
+                    <tr>
+                        <td>NOVEMBER</td>
+                    </tr>
+                    <tr style="font-weight: bold;">
+                        <td>S</td>
+                        <td>M</td>
+                        <td>T</td>
+                        <td>M</td>
+                        <td>T</td>
+                        <td>F</td>
+                        <td>S</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                    </tr>
+                    <tr>
+                        <td class="holiday">5</td>
+                        <td>6</td>
+                        <td>7</td>
+                        <td>8</td>
+                        <td>9</td>
+                        <td class="holiday">10</td>
+                        <td>11</td>
+                    </tr>
+                    <tr>
+                        <td class="holiday">12</td>
+                        <td>13</td>
+                        <td>14</td>
+                        <td>15</td>
+                        <td>16</td>
+                        <td>17</td>
+                        <td>18</td>
+                    </tr>
+                    <tr>
+                        <td class="holiday">19</td>
+                        <td>20</td>
+                        <td>21</td>
+                        <td>22</td>
+                        <td class="holiday">23</td>
+                        <td>24</td>
+                        <td>25</td>
+                    </tr>
+                    <tr>
+                        <td class="holiday">26</td>
+                        <td>27</td>
+                        <td>28</td>
+                        <td>29</td>
+                        <td>30</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>DECEMBER</td>
+                    </tr>
+                    <tr style="font-weight: bold;">
+                        <td>S</td>
+                        <td>M</td>
+                        <td>T</td>
+                        <td>M</td>
+                        <td>T</td>
+                        <td>F</td>
+                        <td>S</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>1</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td class="holiday">3</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>7</td>
+                        <td>8</td>
+                        <td>9</td>
+                    </tr>
+                    <tr>
+                        <td class="holiday">10</td>
+                        <td>11</td>
+                        <td>12</td>
+                        <td>13</td>
+                        <td>14</td>
+                        <td>15</td>
+                        <td>16</td>
+                    </tr>
+                    <tr>
+                        <td class="holiday">17</td>
+                        <td>18</td>
+                        <td>19</td>
+                        <td>20</td>
+                        <td>21</td>
+                        <td>22</td>
+                        <td>23</td>
+                    </tr>
+                    <tr>
+                        <td class="holiday">24</td>
+                        <td class="holiday">25</td>
+                        <td>26</td>
+                        <td>27</td>
+                        <td>28</td>
+                        <td>29</td>
+                        <td>30</td>
+                    </tr>
+                    <tr>
+                        <td class="holiday">31</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2>HOLIDAYS AND OBSERVANCES</h2>
+        <div class="flex-box-2">
+            <table style="margin-left: 0;">
+                <tr>
+                    <td>Jan 1 - New Year's Day</td>
+                </tr>
+                <tr>
+                    <td><span class="holiday">Jan 2</span> - New Year's Day day off</td>
+                </tr>
+                <tr>
+                    <td><span class="holiday">Jan 16</span> - Martin Luther King Jr. Day</td>
+                </tr>
+                <tr>
+                    <td>Feb 14 - Valentine's Day</td>
+                </tr>
+                <tr>
+                    <td><span class="holiday">Feb 20</span> - President's Day</td>
+                </tr>
+                <tr>
+                    <td>Mar 17 - St. Patrick's Day</td>
+                </tr>
+                <tr>
+                    <td>Apr 9 - Easter Sunday</td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <td>Apr 10 - Easter monday</td>
+                </tr>
+                <tr>
+                    <td>Apr 18 - Tax Day</td>
+                </tr>
+                <tr>
+                    <td>May 5 - Canco de Mayo</td>
+                </tr>
+                <tr>
+                    <td>May 14 - Mother's Day</td>
+                </tr>
+                <tr>
+                    <td><span class="holiday">May 29</span> - Memorial Day</td>
+                </tr>
+                <tr>
+                    <td>Jun 14 - Flag Day</td>
+                </tr>
+                <tr>
+                    <td>Jun 18 - Father's Day</td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <td> <span class="holiday">Jun 19</span> - Juneteenth Day </td>
+                </tr>
+                <tr>
+                    <td> <span class="holiday">Jul 4</span> - Independence Day </td>
+                </tr>
+                <tr>
+                    <td><span class="holiday">Sep 4</span> - Labor Day</td>
+                </tr>
+                <tr>
+                    <td> <span class="holiday">Oct 9</span> - Columbus day </td>
+                </tr>
+                <tr>
+                    <td> Oct 31 - Halloween </td>
+                </tr>
+                <tr>
+                    <td> Nov 7 -  Election Day</td>
+                </tr>
+                <tr>
+                    <td> <span class="holiday">Nov 10</span> - Veterans Day day off</td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <td> Nov 11 - Veterans Day </td>
+                </tr>
+                <tr>
+                    <td> <span class="holiday">Nov 23</span> - Thanksgiving Day </td>
+                </tr>
+                <tr>
+                    <td> Nov 24 - Black Friday </td>
+                </tr>
+                <tr>
+                    <td> Dec 24 - Christmas Eve </td>
+                </tr>
+                <tr>
+                    <td><span class="holiday">Nov 25</span> - Christmas Day </td>
+                </tr>
+                <tr>
+                    <td> Dec 31 - New Year's Eve </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>
