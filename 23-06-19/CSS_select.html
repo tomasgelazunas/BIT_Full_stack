@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS selektoriai</title>
+    <!-- CSS Internal Style -->
+    <style>
+        table {
+            border: 1px solid black;
+            border-spacing: 0;
+            width: 100%;
+        }
+        .table th {
+            font-size: 16px;
+        }
+        /* .(taškas) žymi klasės atributo selektorių. */
+        .noborder {
+            border: none;
+        }
+        .bigfontsize {
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <table class="noborder">
+        <thead>
+            <tr class="bigfontsize">
+                <th>Produktas</th>
+                <th>Kiekis</th>
+                <th>Kaina</th>
+                <th>Data</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Monitorius</td>
+                <td>1</td>
+                <td>100.99 EUR</td>
+                <td>2023-06-19</td>
+            </tr>
+        </tbody>
+    </table>
+    <table>
+        <thead>
+            <tr>
+                <th>Produktas</th>
+                <th>Kiekis</th>
+                <th>Kaina</th>
+                <th>Data</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Kompiuteris</td>
+                <td>1</td>
+                <td>1000.99 EUR</td>
+                <td>2023-06-19</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
