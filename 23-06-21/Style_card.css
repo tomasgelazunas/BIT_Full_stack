@@ -1,0 +1,151 @@
+body {
+    background-color: #f5f5f5;
+    padding: 0;
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+}
+
+.card {
+    height: 250px;
+    width: 500px;    
+    margin-bottom: 50px;
+    margin-top: 50px;
+    /* box-shadow: rgba(0, 0, 0, 0.582) 0px 5px 15px; */  */
+}
+
+/* Lifted corners */
+.drop-shadow {
+    position:relative;
+    width:100%;
+    padding:0;
+    margin:2em 10px 4em;
+    background:#fff;
+    -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+       -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+	    box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+
+.drop-shadow:before,
+.drop-shadow:after {
+    content:"";
+    position:absolute;
+    z-index:-2;
+}
+
+.drop-shadow p {
+    font-size:10em;
+    font-weight:300;
+    text-align:center;
+}
+.lifted {
+    -moz-border-radius:8px;
+	 border-radius:0;
+}
+.lifted:before,
+.lifted:after {
+    bottom:15px;
+    left:10px;
+    width:50%;
+    height:20%;
+    max-width:300px;
+    max-height:100px;
+    -webkit-box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);
+       -moz-box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);
+	    box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);
+    -webkit-transform:rotate(-5deg);
+       -moz-transform:rotate(-5deg);
+	-ms-transform:rotate(-5deg);
+	 -o-transform:rotate(-5deg);
+	    transform:rotate(-5deg);
+}
+.lifted:after {
+    right:10px;
+    left:auto;
+    -webkit-transform:rotate(5deg);
+       -moz-transform:rotate(5deg);
+	-ms-transform:rotate(5deg);
+	 -o-transform:rotate(5deg);
+	    transform:rotate(5deg);
+}
+
+.card.palete1 {
+    background: rgb(34,193,195);
+    background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(233,45,253,1) 100%);
+}
+
+.card.palete2 {
+    background: rgb(34,193,195);
+    background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(233,45,253,1) 100%);
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.container2 {
+    width: 500px;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.container2, .container3 {
+    align-items: center;
+}
+
+.vardo_box {
+    height: 150px;
+    width: 250px;
+    background-color: rgba(255, 255, 255, 0.35);
+    align-items: flex-end;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.vardo_box h2, .vardo_box h3 {
+    margin: 0 5px 0 0;
+}
+
+.vardo_box h3 {
+    color: #722075;
+}
+
+.vardo_box_linija {
+    margin-left: 10px;
+    height: 150px;
+    width: 5px;
+    background-color: rgba(255, 255, 255, 0.35);
+}
+
+.info {
+    margin-left: 5px;
+    font-size: 15px;
+    vertical-align: middle;
+    margin: 0;
+}
+
+.text {
+    margin-left: 10px;
+}
+h2, h3{
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+h4 {
+    font-weight:100;
+    margin:0;
+}
+
+img {
+    width: 20%;
+}
+
+.card,
+.container2,
+.container3,
+.vardo_box,
+.info .item {
+    display: flex;
+}

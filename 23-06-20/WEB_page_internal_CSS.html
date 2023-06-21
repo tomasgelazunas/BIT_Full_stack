@@ -11,6 +11,7 @@
         body {
             margin: 0;
             font-family: "Roboto", sans-serif;
+            background-image: url(google3.jpg);
         }
         /* panaikina ul atitraukimą ir burbuliuką */
         ul {
@@ -58,9 +59,10 @@
         }
         header .container {
             display: flex;
-            justify-content: space-between;
+            justify-content:space-between;
             align-items: center;
             font-weight: 900;
+            padding: 0;
         }
 
         header .logo {
@@ -69,14 +71,16 @@
         .img_flex {
             display: flex;
             align-items: center;
-            max-width: auto;
-            height: auto;
+            /* max-width: 100%;
+            height: auto; */
         }
 /* Containers  */
     .container {
     width: 100%;
-    max-width: 1100px;
+    max-width: 1140px;
     margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
     }
 
     .flex_container {
@@ -92,13 +96,13 @@
         gap: 20px;
         flex-direction: row-reverse;
     }
-    footer div ul { 
+    footer ul { 
             display: flex;
             justify-content: center;
             gap: 30px; /* atitraukimas tarp elementų */
 
         }
-    footer div ul li a {
+    footer ul li a {
             text-decoration: none;
             font-weight: 900;
             display: block; /*kad nebūtų tarpelio tarp tektų, pvz. Apie mus jei išdidinsime, tarp žodžių bus tarpelis */
@@ -107,6 +111,7 @@
 
     .teises {
     text-align: center;
+    color: white;
     padding-top: 40px;
     margin-bottom: 20px;
     }
@@ -136,7 +141,7 @@
     </style>
 </head>
 <body>
-    <header>
+    <header class="container">
         <div class="container">
             <div class="logo">
                 <img src="logo.png" alt="Logotipas">
@@ -153,71 +158,53 @@
         </div>
     </header>
     <main>
-        <div Id="apiemus">
-        <section class="section1">
-            <div class="container">
+        <section Id="apiemus" class="section1 container">
                 <h1>Apie mus</h1>
             <div class="flex_container">
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio neque molestias minima consequatur perspiciatis, autem commodi labore natus numquam tempora pariatur, iste quis consectetur dolor quaerat fuga nostrum similique aut maiores ea, adipisci blanditiis beatae facere. Commodi reiciendis, adipisci rerum voluptates, quos quod sed deserunt expedita, quisquam nostrum ex ratione optio eaque eveniet suscipit repellendus soluta est? Perferendis nemo sapiente magni quaerat reprehenderit libero, iusto culpa architecto corrupti rerum quam incidunt tempora, sit, exercitationem voluptatum eligendi! Enim doloremque recusandae numquam quidem harum adipisci eligendi voluptatem eaque magnam ratione, deleniti ullam optio maxime saepe totam expedita dolore cupiditate ea consectetur sapiente.</p>
-            
             <div class="img_flex"><img src="Google1.jpg" alt="google"></div>
-        </div>
             </div>
         </section>
-    </div>
-    <div Id="pagrindinis">
-        <section class="section2">
-            <div class="container">
+ 
+        <section Id="pagrindinis" class="section2 container">
                 <h1>Pagrindinis</h1>
             <div class="flex_container_rev">
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio neque molestias minima consequatur perspiciatis, autem commodi labore natus numquam tempora pariatur, iste quis consectetur dolor quaerat fuga nostrum similique aut maiores ea, adipisci blanditiis beatae facere. Commodi reiciendis, adipisci rerum voluptates, quos quod sed deserunt expedita, quisquam nostrum ex ratione optio eaque eveniet suscipit repellendus soluta est? Perferendis nemo sapiente magni quaerat reprehenderit libero, iusto culpa architecto corrupti rerum quam incidunt tempora, sit, exercitationem voluptatum eligendi! Enim doloremque recusandae numquam quidem harum adipisci eligendi voluptatem eaque magnam ratione, deleniti ullam optio maxime saepe totam expedita dolore cupiditate ea consectetur sapiente.</p>
                 <div class="img_flex"><img src="Google1.jpg" alt="google"></div>
             </div>
-            </div>
         </section>
-    </div>
-    <div Id="naujienos">
-        <section class="section3">
-            <div class="container">
+
+        <section Id="naujienos" class="section3 container">
                 <h1>Naujienos</h1>
             <div class="flex_container">
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio neque molestias minima consequatur perspiciatis, autem commodi labore natus numquam tempora pariatur, iste quis consectetur dolor quaerat fuga nostrum similique aut maiores ea, adipisci blanditiis beatae facere. Commodi reiciendis, adipisci rerum voluptates, quos quod sed deserunt expedita, quisquam nostrum ex ratione optio eaque eveniet suscipit repellendus soluta est? Perferendis nemo sapiente magni quaerat reprehenderit libero, iusto culpa architecto corrupti rerum quam incidunt tempora, sit, exercitationem voluptatum eligendi! Enim doloremque recusandae numquam quidem harum adipisci eligendi voluptatem eaque magnam ratione, deleniti ullam optio maxime saepe totam expedita dolore cupiditate ea consectetur sapiente.</p>
                 <div class="img_flex"><img src="Google1.jpg" alt="google"></div>
             </div>
-            </div>
         </section>
-    </div>
-    <div Id="karjera">
-        <section class="section4">
-            <div class="container">
+
+        <section Id="karjera" class="section4 container">
                 <h1>Karjera</h1>
             <div class="flex_container_rev">
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio neque molestias minima consequatur perspiciatis, autem commodi labore natus numquam tempora pariatur, iste quis consectetur dolor quaerat fuga nostrum similique aut maiores ea, adipisci blanditiis beatae facere. Commodi reiciendis, adipisci rerum voluptates, quos quod sed deserunt expedita, quisquam nostrum ex ratione optio eaque eveniet suscipit repellendus soluta est? Perferendis nemo sapiente magni quaerat reprehenderit libero, iusto culpa architecto corrupti rerum quam incidunt tempora, sit, exercitationem voluptatum eligendi! Enim doloremque recusandae numquam quidem harum adipisci eligendi voluptatem eaque magnam ratione, deleniti ullam optio maxime saepe totam expedita dolore cupiditate ea consectetur sapiente.</p>
                 <div class="img_flex"><img src="Google1.jpg" alt="google"></div>
             </div>
-            </div>
         </section>
-    </div>
-    <div Id="kontaktai">
-        <section class="section5">
-            <div class="container">
+
+        <section Id="kontaktai" class="section5 container">
                 <h1>Kontaktai</h1>
             <div class="flex_container">
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio neque molestias minima consequatur perspiciatis, autem commodi labore natus numquam tempora pariatur, iste quis consectetur dolor quaerat fuga nostrum similique aut maiores ea, adipisci blanditiis beatae facere. Commodi reiciendis, adipisci rerum voluptates, quos quod sed deserunt expedita, quisquam nostrum ex ratione optio eaque eveniet suscipit repellendus soluta est? Perferendis nemo sapiente magni quaerat reprehenderit libero, iusto culpa architecto corrupti rerum quam incidunt tempora, sit, exercitationem voluptatum eligendi! Enim doloremque recusandae numquam quidem harum adipisci eligendi voluptatem eaque magnam ratione, deleniti ullam optio maxime saepe totam expedita dolore cupiditate ea consectetur sapiente.</p>
                 <div class="img_flex"><img src="google2.jpg" alt="google"></div>
             </div>
-            </div>
         </section>
-    </div>
+ 
     </main>
-    <footer>
-        <div class="container">
+    <footer class="container">
             <ul>
                 <li><a href="" style="color: #4285F4" href="">Privatumo politika</a></li>
                 <li><a href="" style="color: #DB4437" href="">Prekės ženklas</a></li>
                 <li><a href="" style="color: #F4B400" href="">Naujienos</a></li>
             </ul>
-        </div>
         <div class="teises">© 2023 TG. Visos teisės saugomos</div>
     </footer>
 </body>

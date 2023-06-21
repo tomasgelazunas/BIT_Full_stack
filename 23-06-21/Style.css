@@ -1,0 +1,130 @@
+        body {
+            margin: 0;
+            font-family: "Roboto", sans-serif;
+            background-image: url(google3.jpg);
+        }
+        /* panaikina ul atitraukimą ir burbuliuką */
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        p {
+            text-align: justify;
+            margin: 0;
+        }
+
+        img {
+            max-width: 100%;
+            padding-bottom: 20px;
+        }
+        h1 {
+            margin:0;
+            padding: 20px 0px 20px;
+        }
+
+        header {
+            background-color: rgb(255, 255, 255);
+        }
+
+/* nurodomas kelias iki ul */
+        header nav ul { 
+            display: flex;
+            justify-content: center;
+            gap: 30px; /* atitraukimas tarp elementų */
+
+        }
+        header nav ul li a {
+            text-decoration: none;
+            font-weight: 900;
+            display: block; /*kad nebūtų tarpelio tarp tektų, pvz. Apie mus jei išdidinsime, tarp žodžių bus tarpelis */
+            padding: 5px 10px;
+        }
+
+/* hover - kas bus užvedus pelę, bus baltas fonas ir spalvos*/
+        header nav ul li a:hover {
+            background-color: lightgrey;
+
+        }
+        header .container {
+            display: flex;
+            justify-content:space-between;
+            align-items: center;
+            font-weight: 900;
+            padding: 0;
+        }
+
+        header .logo {
+            width: 120px;
+        }
+        .img_flex {
+            display: flex;
+            align-items: center;
+            /* max-width: 100%;
+            height: auto; */
+        }
+/* Containers  */
+    .container {
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    }
+
+    .flex_container {
+    display: flex;
+    flex-direction: row;  
+    height: 100%;
+    gap: 20px;
+    }
+
+    .flex_container_rev {
+        display: flex; 
+        height: 100%;
+        gap: 20px;
+        flex-direction: row-reverse;
+    }
+    footer ul { 
+            display: flex;
+            justify-content: center;
+            gap: 30px; /* atitraukimas tarp elementų */
+
+        }
+    footer ul li a {
+            text-decoration: none;
+            font-weight: 900;
+            display: block; /*kad nebūtų tarpelio tarp tektų, pvz. Apie mus jei išdidinsime, tarp žodžių bus tarpelis */
+            padding-top: 40px;
+        }
+
+    .teises {
+    text-align: center;
+    color: white;
+    padding-top: 40px;
+    margin-bottom: 20px;
+    }
+ /* sekcijos */
+        section h1 {
+            color: black;
+        }
+
+        .section1 {
+            background-color: #4285F4;
+        }
+        .section2 {
+            background-color: #DB4437;
+        }
+        .section3 {
+            background-color: #F4B400;
+        }
+        .section4 {
+            background-color: #0F9D58;
+        }
+        .section5 {
+            background-color: #717172;
+        }
+		html {
+				scroll-behavior: smooth;
+            }
