@@ -5,7 +5,7 @@ body {
     font-family: "Roboto", sans-serif;
 }
 
-.card {
+.kort {
     height: 250px;
     width: 500px;    
     margin-bottom: 50px;
@@ -31,11 +31,6 @@ body {
     z-index:-2;
 }
 
-.drop-shadow p {
-    font-size:10em;
-    font-weight:300;
-    text-align:center;
-}
 .lifted {
     -moz-border-radius:8px;
 	 border-radius:0;
@@ -67,12 +62,12 @@ body {
 	    transform:rotate(5deg);
 }
 
-.card.palete1 {
+.kort.fonas {
     background: rgb(34,193,195);
     background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(233,45,253,1) 100%);
 }
 
-.card.palete2 {
+.kort.fonas2 {
     background: rgb(34,193,195);
     background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(233,45,253,1) 100%);
 }
@@ -141,7 +136,7 @@ img {
     width: 20%;
 }
 
-.card,
+.kort,
 .container2,
 .container3,
 .vardo_box,
