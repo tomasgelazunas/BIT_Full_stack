@@ -122,6 +122,14 @@ body {
 .text {
     margin-left: 10px;
 }
+
+.foto {  
+    width: 15px;
+    height: 15px;
+    padding-right: 5px;
+    vertical-align: middle;
+}
+
 h2, h3{
     font-weight: bold;
     text-transform: uppercase;
@@ -136,10 +144,6 @@ img {
     width: 20%;
 }
 
-.kort,
-.container2,
-.container3,
-.vardo_box,
-.info .item {
+.kort,.container2,.container3,.vardo_box,.info .item {
     display: flex;
 }
