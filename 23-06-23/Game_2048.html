@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>Game_2048</title>
+		<link
+			rel="preconnect"
+			href="https://fonts.googleapis.com"
+		/>
+		<link
+			rel="preconnect"
+			href="https://fonts.gstatic.com"
+			crossorigin
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,900;1,300;1,700&display=swap"
+			rel="stylesheet"
+		/>
+		<style>
+			.container {
+				background-color: #faf8ef;
+				width: 800px;
+				min-height: 1000px;
+				padding: 3rem;
+				display: flex;
+				flex-direction: column;
+			}
+			body {
+				display: flex;
+				justify-content: center;
+				padding-top: 80px;
+				font-family: "Roboto", sans-serif;
+			}
+			.flex {
+				display: flex;
+			}
+			.justify-center {
+				justify-content: center;
+			}
+			.justify-end {
+				justify-content: end;
+			}
+			.justify-between {
+				justify-content: space-between;
+			}
+			.items-center {
+				align-items: center;
+			}
+			.items-end {
+				align-items: end;
+			}
+			.items-start {
+				align-items: start;
+			}
+			.column {
+				flex-direction: column;
+			}
+			.bg-box {
+				background-color: #bbada0;
+			}
+
+			.bg-button {
+				background-color: #8f7a66;
+			}
+			.title {
+				font-size: 104px;
+			}
+			.score {
+				padding: 1rem 4rem;
+				display: flex;
+				flex-direction: column;
+			}
+			h1 {
+				margin: 3rem 0 1.5rem 0;
+			}
+			.text-normal {
+				font-size: 16px;
+			}
+			.text-semi-bigger {
+				font-size: 20px;
+			}
+			.text-big {
+				font-size: 24px;
+			}
+			.text-bigger {
+				font-size: 32px;
+			}
+			.text-large {
+				font-size: 48px;
+			}
+			.bold {
+				font-weight: 600;
+			}
+			.gap-mini {
+				gap: 0.5rem;
+			}
+			.gap-small {
+				gap: 1rem;
+			}
+			.gap {
+				gap: 1.25rem;
+			}
+			.semi-bold {
+				font-weight: 600;
+			}
+			.underline {
+				text-decoration: underline;
+			}
+			.new-game-button {
+				padding: 1rem 3rem;
+			}
+			.box {
+				background-color: #cdc1b4;
+				width: 10.75rem;
+				height: 10.75rem;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				color: white;
+			}
+			.game-box {
+				background-color: #bbada0;
+			}
+			.mt-game-box {
+				margin-top: 3.5rem;
+			}
+			.p-game-box {
+				padding: 1rem;
+			}
+			.bg-4 {
+				background-color: #eee1c9;
+			}
+			.bg-2 {
+				background-color: #eee4da;
+			}
+			.bg-8 {
+				background-color: #f3b27a;
+			}
+			.bg-32 {
+				background-color: #f77c5f;
+			}
+			.bg-128 {
+				background-color: #edd073;
+			}
+			.bg-256 {
+				background-color: #edcc62;
+			}
+			.text-xl {
+				font-size: 96px;
+			}
+			.text-light {
+				color: #ddd9da;
+			}
+			.text-dark {
+				color: #776e65;
+			}
+			.text-white {
+				color: white;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="flex justify-between items-start">
+				<h1 class="text-dark title">2048</h1>
+				<div class="flex items-end gap-mini">
+					<div class="bg-box score flex column items-center">
+						<div class="text-light bold text-semi-bigger">SCORE</div>
+						<div class="text-white bold text-bigger">2628</div>
+					</div>
+					<div class="bg-box score flex column items-center">
+						<div class="text-light bold text-semi-bigger">BEST</div>
+						<div class="text-white bold text-bigger">8712</div>
+					</div>
+				</div>
+			</div>
+			<div class="flex justify-between">
+				<div class="text-big flex text-dark column">
+					<div class="flex">
+						Join the tiles, get to
+						<div class="bold">&nbsp;2048!</div>
+					</div>
+					<div class="semi-bold underline">How to play →</div>
+				</div>
+				<div class="text-white bg-button new-game-button text-bigger bold">
+					New Game
+				</div>
+			</div>
+			<div
+				class="game-box flex mt-game-box p-game-box gap justify-between column"
+			>
+				<div class="flex gap justify-between">
+					<div class="box"></div>
+					<div class="box bg-4 text-xl text-dark bold">4</div>
+					<div class="box bg-8 text-xl text-white bold">8</div>
+					<div class="box bg-4 text-xl text-dark bold">4</div>
+				</div>
+				<div class="flex gap justify-between">
+					<div class="box"></div>
+					<div class="box bg-2 text-xl text-dark bold">2</div>
+					<div class="box bg-32 text-xl text-white bold">32</div>
+					<div class="box bg-8 text-xl text-white bold">8</div>
+				</div>
+				<div class="flex gap justify-between">
+					<div class="box"></div>
+					<div class="box"></div>
+					<div class="box"></div>
+					<div class="box bg-128 text-xl text-white bold">128</div>
+				</div>
+				<div class="flex gap justify-between">
+					<div class="box"></div>
+					<div class="box"></div>
+					<div class="box bg-2 text-xl text-dark bold">2</div>
+					<div class="box bg-256 text-xl text-white bold">256</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
