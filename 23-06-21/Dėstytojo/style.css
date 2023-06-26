@@ -22,6 +22,8 @@ img {
 header {
     background-color: white;
     padding: 10px 0;
+    position: fixed;
+    width: 100%;
 }
 
 header nav ul {
