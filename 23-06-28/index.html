@@ -8,43 +8,161 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mandali&family=Open+Sans:wght@300&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="assets/images/favicon.ico">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="assets/css/Style.css">
 </head>
 <body>
     <header>
         <div class="container">
-            <div>
-                <img src="assets/images/logo.png" alt="Logotipas">
+            <div class="logo">
+                <a href="#">
+                    <img src="assets/images/logo.png" alt="Logo" />
+                </a>
             </div>
             <nav>
                 <ul>
-                    <li><a href="#Home">Home</a></li>
-                    <li><a href="#About" href="">About</a></li>
-                    <li><a href="#Projects" href="">Projects</a></li>
-                    <li><a href="#Testimonial" href="">Testimonial</a></li>
-                    <li><a href="#kontaktai" href="">Team</a></li>
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#testimonial">Testimonial</a></li>
+                    <li><a href="#team">Team</a></li>
                 </ul>
             </nav>
         </div>
     </header>
     <main>
-        <section class="container-1-sect" id="Home">
-            <div class="row-1-sect">
-                <div class="col-1-sect col-6">
-                    <div class="hero-70-off">
-                        <span class="span-hero-text">70% off</span> for first 3 months
+        <section id="home">
+            <div class="container">
+                <div class="row">
+                    <div class="col-6">
+                        <span class="discount">
+                            <span class="green">70% off</span> for first 3 months
+                        </span>
+                        <h1>Digital Agency with Excellence Services</h1>
+                        <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit sed quia consequuntur.</p>
+                        <div class="buttons">
+                            <a href="#" class="button">More about us <i class="bi bi-chevron-right"></i></a>
+                            <a href="#" class="demo">See live demo <i class="bi bi-google-play"></i></a>
+                        </div>
                     </div>
-                    <div><h1>Digital Agency</br> with Excellence</br>Services</h1></div>
-                    <div class="text-1-sec">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit sed quia consequuntur.</div>
-                    <div class="row-1-sect">
-                    <div class="button-1-sect col-1-sect col-3">More About Us</div>
-                    <div class="col-1-sect col-3">See Live Demo</div>
-                    <div class="col-1-sect col-3"></div>
+                    <div class="col-6">
+                        <img src="assets/images/hero-img.png" alt="" />
+                    </div>
                 </div>
+                <div class="clients">
+                    <ul>
+                        <li><img src="assets/images/dribbble.png" alt="Dribble"/></li>
+                        <li><img src="assets/images/envato.png" alt="Dribble"/></li>
+                        <li><img src="assets/images/insta.png" alt="Dribble"/></li>
+                        <li><img src="assets/images/bootstrap.png" alt="Dribble"/></li>
+                        <li><img src="assets/images/jquery.png" alt="Dribble"/></li>
+                    </ul>
                 </div>
-                <div class="col-1-sect col-6">
-                    <img src="assets/images/hero-img.png" alt="Hero" class="img-hero">
+            </div>
+        </section>
+        <section id="about" class="about">
+            <div class="container">
+                <div class="row-1">
+                    <div class="col-6">
+                        <h6>WHAT WE DO</h6>
+                        <h2>The things motivates me is commen form of motivation.</h2>
+                    </div>
                 </div>
+                <div class="row-2">
+                    <div class="col-4">
+                        <div class="green-shadow"><img src="assets/images/1.png" alt="" /></div>
+                        <p><h5>Strategy & Research</h5></p>
+                        <p>Et harum quidem as rerum facilis us est et distinctio nam libero temp soluta nobis esteligendi optio.</p> 
+                        <ul>
+                            <li><a href="#">More about <i class="bi bi-arrow-right-short"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="col-4">
+                        <div class="green-shadow"><img src="assets/images/2.png" alt="" /></div>
+                        <p><h5>Design & Development</h5></p>
+                        <p>Et harum quidem as rerum facilis us est et distinctio nam libero temp soluta nobis esteligendi optio.</p> 
+                        <ul>
+                            <li><a href="#">More about <i class="bi bi-arrow-right-short"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="col-4">
+                        <div class="green-shadow"><img src="assets/images/3.png" alt="" /></div>
+                        <p><h5>Management & Marketing</h5></p> 
+                        <p>Et harum quidem as rerum facilis us est et distinctio nam libero temp soluta nobis esteligendi optio.</p> 
+                        <ul>
+                            <li><a href="#">More about <i class="bi bi-arrow-right-short"></i></a></li>
+                        </ul>
+                </div>
+            </div>
+            </div>
+        </section>
+        <section id="projects" class="projects">
+            <div class="container">
+                <div class="row-1">
+                    <div class="col-6">
+                        <h6>OUR PROJECTS</h6>
+                        <h2>A great design brings thousands of great results.</h2>
+                    </div>
+                </div>
+                <div class="row-1">
+                    <div class="col-12">
+                        <div>
+                        <ul>
+                            <li><a href="#" class="categorys-tab active">All Items</a></li>
+                            <li><a href="#" class="categorys-tab">Design</a></li>
+                            <li><a href="#" class="categorys-tab">Creative</a></li>
+                            <li><a href="#" class="categorys-tab">Digital</a></li>
+                            <li><a href="#" class="categorys-tab">Photography</a></li>
+                        </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="row-2">
+                    <div class="col-4">
+                        <img class="box-pics" src="assets/images/1-1.jpg" alt="Dribble"/>
+                        <div class="card">
+                            <p>The Language of Designs</p>
+                            <p class="text-card">Design</p>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <img class="box-pics" src="assets/images/2-2.jpg" alt="Dribble"/>
+                        <div class="card">
+                            <p>The Language of Designs</p>
+                            <p class="text-card">Design</p>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <img class="box-pics" src="assets/images/3-3.jpg" alt="Dribble"/>
+                        <div class="card">
+                            <p>The Language of Designs</p>
+                            <p class="text-card">Design</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row-2">
+                    <div class="col-4">
+                        <img class="box-pics" src="assets/images/4-4.jpg" alt="Dribble"/>
+                        <div class="card">
+                            <p>The Language of Designs</p>
+                            <p class="text-card">Design</p>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <img class="box-pics" src="assets/images/5-5.jpg" alt="Dribble"/>
+                        <div class="card">
+                            <p>The Language of Designs</p>
+                            <p class="text-card">Design</p>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <img class="box-pics" src="assets/images/6-6.jpg" alt="Dribble"/>
+                        <div class="card">
+                            <p>The Language of Designs</p>
+                            <p class="text-card">Design</p>
+                        </div>
+                    </div>
+                </div>                       
             </div>
         </section>
     </main>
