@@ -55,7 +55,7 @@ body {
     flex-direction: column;
     max-width: 404px;
     height: 638px;
-    padding: 0px 0px 64px 0px;
+    padding: 202px 0px 64px 0px;
     justify-content: center;
 
 }
@@ -64,35 +64,67 @@ body {
     font-weight: 500;
     line-height: 48px;
     letter-spacing: 0px;
-    text-align: left;    
+    text-align: left;
+    padding-bottom: 40px;    
 }
-label {
+label #name, #email, #passw, #check-box {
     display: block;
     margin: 5px 0;
     font-size: 14px;
     line-height: 21px;
 }
-input[type="text"],[type="password"]  {
+input[type="text"] {
     padding: 10px 0px 10px 10px;
     width: 404px;
     height: 32px;
     border: 1px solid #D9D9D9;
-    border-radius: 3px;
+    border-radius: 10px;
+    font-size: 10px;
+    color: #D9D9D9;
+    line-height: 15px;
+    margin-bottom: 20px;
+}
+input[type="password"] {
+    padding: 10px 0px 10px 10px;
+    width: 404px;
+    height: 32px;
+    border: 1px solid #D9D9D9;
+    border-radius: 10px;
     font-size: 10px;
     color: #D9D9D9;
     line-height: 15px;
 }
+
 input[type="email"] {
     padding: 10px 0px 10px 10px;
     width: 404px;
     height: 32px;
     border: 1px solid #D9D9D9;
-    border-radius: 3px;
+    border-radius: 10px;
     font-size: 10px;
     color: #D9D9D9;
     line-height: 15px;
+    margin-bottom: 20px;
 }
-button {
+
+label#check-box {
+    font-size: 9px;
+    color: #000000;
+    line-height: 13.5px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+input[type="checkbox"] {
+    color: #000000;
+    border-radius: 2px;
+    border: 1px;
+    width: 9px;
+    height: 9.85px;
+    margin:0;
+    vertical-align: middle;
+}
+button.signup {
     padding: 10px 0px 10px 10px;
     width: 404px;
     height: 32px;
@@ -103,4 +135,47 @@ button {
     color: #FFFFFF;
     font-weight: 700;
     cursor: pointer;
+}
+.line {
+    display: flex;
+    flex-basis: 20%;
+    align-items: center;
+    color: #000000;
+    margin: 0;
+    font-size: 9px;
+    line-height: 13.5px;
+}
+
+.line::before, .line::after {
+    content: "";
+    flex-grow: 1;
+    background:#F5F5F5;
+    height: 2px;
+}
+
+button.box-1, button.box-2 {
+width: 190px;
+height: 32px;
+padding: 4px 20px 4px 20px;
+border-radius: 10px;
+border: 1px solid #D9D9D9;
+gap: 10px;
+background-color: white;
+font-size: 12px;
+line-height: 18px;
+}
+div.signin {
+    text-align: center;
+    padding-top: 20px;
+    font-size: 14px;
+    line-height: 21px;
+}
+img#google, img#apple {
+    vertical-align: middle;
+    padding-right: 10px;
+}
+
+div.signin a {
+    text-decoration: none;
+    color: #0F3DDE;
 }
