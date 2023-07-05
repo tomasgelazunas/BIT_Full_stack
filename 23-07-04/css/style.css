@@ -230,7 +230,9 @@ div#image {
     width: 781.5px;
     height: 1042px;
     border-radius: 45px 0px 0px 45px;
-    background: url(/23-07-04/images/Flowers.png), lightgray 50% / cover no-repeat;
+    background: url(/23-07-04/images/Flowers.png);
+    background-size:cover;
+    background-repeat: no-repeat;
 }
 @media only screen and (max-width: 768px) {
     .row {
