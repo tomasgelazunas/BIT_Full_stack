@@ -14,10 +14,14 @@ body {
     margin: 0 auto;
 }
 
-.row {
+.row{
     display: flex;
+    position: relative;
 }
 
+.col {
+    flex: 0 0 wrap;
+}
 .col-1 {
     width: 8.333333333333333%;
 }
@@ -227,4 +231,17 @@ div#image {
     height: 1042px;
     border-radius: 45px 0px 0px 45px;
     background: url(/23-07-04/images/Flowers.png), lightgray 50% / cover no-repeat;
+}
+@media only screen and (max-width: 768px) {
+    .row {
+        justify-content: center;
+    }
+    .container {
+        background: url(/23-07-04/images/Flowers_opac.png);
+        background-size:cover;
+        background-repeat: no-repeat;
+    }
+    div#image {
+        display: none;
+    }
 }
