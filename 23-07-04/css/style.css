@@ -53,10 +53,11 @@ body {
 .box {
     display:flex;
     flex-direction: column;
-    max-width: 404px;
+    width: 404px;
     height: 638px;
     padding: 202px 0px 64px 0px;
     justify-content: center;
+    box-sizing:border-box;
 
 }
 .started {
@@ -65,7 +66,7 @@ body {
     line-height: 48px;
     letter-spacing: 0px;
     text-align: left;
-    padding-bottom: 40px;    
+    padding-bottom: 62.5px;    
 }
 label #name, #email, #passw, #check-box {
     display: block;
@@ -76,35 +77,35 @@ label #name, #email, #passw, #check-box {
 input[type="text"] {
     padding: 10px 0px 10px 10px;
     width: 404px;
-    height: 32px;
     border: 1px solid #D9D9D9;
     border-radius: 10px;
     font-size: 10px;
     color: #D9D9D9;
-    line-height: 15px;
     margin-bottom: 20px;
+    box-sizing: border-box;
+    line-height: 12px;
 }
 input[type="password"] {
     padding: 10px 0px 10px 10px;
     width: 404px;
-    height: 32px;
     border: 1px solid #D9D9D9;
     border-radius: 10px;
     font-size: 10px;
     color: #D9D9D9;
-    line-height: 15px;
+    box-sizing: border-box;
+    line-height: 12px;
 }
 
 input[type="email"] {
     padding: 10px 0px 10px 10px;
     width: 404px;
-    height: 32px;
     border: 1px solid #D9D9D9;
     border-radius: 10px;
     font-size: 10px;
     color: #D9D9D9;
-    line-height: 15px;
     margin-bottom: 20px;
+    box-sizing: border-box;
+    line-height: 12px;
 }
 
 label#check-box {
@@ -125,16 +126,18 @@ input[type="checkbox"] {
     vertical-align: middle;
 }
 button.signup {
-    padding: 10px 0px 10px 10px;
+    padding-left: 10px;
+    margin-bottom: 55px;
     width: 404px;
     height: 32px;
     border: 1px solid #3A5B22;
     border-radius: 10px;
-    font-size: 10px;
+    font-size: 13px;
+    font-weight: 700;
     background-color: #3A5B22;
     color: #FFFFFF;
-    font-weight: 700;
     cursor: pointer;
+
 }
 .line {
     display: flex;
@@ -153,20 +156,26 @@ button.signup {
     height: 2px;
 }
 
+div.buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 23px;
+}
+
 button.box-1, button.box-2 {
 width: 190px;
 height: 32px;
 padding: 4px 20px 4px 20px;
 border-radius: 10px;
 border: 1px solid #D9D9D9;
-gap: 10px;
 background-color: white;
 font-size: 12px;
 line-height: 18px;
+margin-top: 55px;
 }
 div.signin {
     text-align: center;
-    padding-top: 20px;
+    padding-top: 29px;
     font-size: 14px;
     line-height: 21px;
 }
@@ -178,4 +187,7 @@ img#google, img#apple {
 div.signin a {
     text-decoration: none;
     color: #0F3DDE;
+}
+label#check-box a {
+    color: black;
 }
