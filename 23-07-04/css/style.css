@@ -1,18 +1,23 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
     color: black;
 }
+
 .container {
-    max-width: 1536px;
+    width: 1536px;
     height: 1042px;
-    /* padding: 0px 0.5px 0px 175px; */
-    margin: 50px auto;
+    margin: 0 auto;
 }
+
 .row {
     display: flex;
-    gap: 30px;
 }
+
 .col-1 {
     width: 8.333333333333333%;
 }
@@ -55,11 +60,12 @@ body {
     flex-direction: column;
     width: 404px;
     height: 638px;
-    padding: 202px 0px 64px 0px;
+    padding-bottom: 64px;
     justify-content: center;
-    box-sizing:border-box;
+    margin: 202px 175px 202px;
 
 }
+
 .started {
     font-size: 32px;
     font-weight: 500;
@@ -68,43 +74,50 @@ body {
     text-align: left;
     padding-bottom: 62.5px;    
 }
-label #name, #email, #passw, #check-box {
+
+label#name, #email, #passw, #check-box {
     display: block;
-    margin: 5px 0;
+    margin: 0;
     font-size: 14px;
     line-height: 21px;
 }
+
+input {
+    font-family: 'Poppins';
+}
+
 input[type="text"] {
     padding: 10px 0px 10px 10px;
     width: 404px;
+    height: 32px;
     border: 1px solid #D9D9D9;
     border-radius: 10px;
     font-size: 10px;
     color: #D9D9D9;
     margin-bottom: 20px;
-    box-sizing: border-box;
     line-height: 12px;
 }
+
 input[type="password"] {
     padding: 10px 0px 10px 10px;
     width: 404px;
+    height: 32px;
     border: 1px solid #D9D9D9;
     border-radius: 10px;
     font-size: 10px;
     color: #D9D9D9;
-    box-sizing: border-box;
     line-height: 12px;
 }
 
 input[type="email"] {
     padding: 10px 0px 10px 10px;
     width: 404px;
+    height: 32px;
     border: 1px solid #D9D9D9;
     border-radius: 10px;
     font-size: 10px;
     color: #D9D9D9;
     margin-bottom: 20px;
-    box-sizing: border-box;
     line-height: 12px;
 }
 
@@ -113,7 +126,7 @@ label#check-box {
     color: #000000;
     line-height: 13.5px;
     padding-bottom: 20px;
-    padding-top: 20px;
+    padding: 28px 0px;
 }
 
 input[type="checkbox"] {
@@ -124,21 +137,28 @@ input[type="checkbox"] {
     height: 9.85px;
     margin:0;
     vertical-align: middle;
+    margin-right: 6px;
 }
+
 button.signup {
-    padding-left: 10px;
-    margin-bottom: 55px;
+    padding: 10px 0px 10px 10px;
+    margin-bottom: 62px;
     width: 404px;
     height: 32px;
     border: 1px solid #3A5B22;
     border-radius: 10px;
     font-size: 13px;
+    font-family: 'Poppins';
     font-weight: 700;
     background-color: #3A5B22;
     color: #FFFFFF;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
 }
+
 .line {
     display: flex;
     flex-basis: 20%;
@@ -156,6 +176,11 @@ button.signup {
     height: 2px;
 }
 
+div.line span {
+padding: 0px 3px 0px;
+line-height: 14px;
+}
+
 div.buttons {
     display: flex;
     flex-direction: row;
@@ -163,22 +188,26 @@ div.buttons {
 }
 
 button.box-1, button.box-2 {
-width: 190px;
+max-width: 192px;
 height: 32px;
-padding: 4px 20px 4px 20px;
+padding: 4px 20px;
 border-radius: 10px;
 border: 1px solid #D9D9D9;
 background-color: white;
 font-size: 12px;
-line-height: 18px;
-margin-top: 55px;
+font-family: 'Poppins';
+font-weight: 500;
+line-height: normal;
+margin-top: 61px;
 }
+
 div.signin {
     text-align: center;
     padding-top: 29px;
     font-size: 14px;
     line-height: 21px;
 }
+
 img#google, img#apple {
     vertical-align: middle;
     padding-right: 10px;
@@ -188,6 +217,14 @@ div.signin a {
     text-decoration: none;
     color: #0F3DDE;
 }
+
 label#check-box a {
     color: black;
+}
+
+#img {
+    width: 781.5px;
+    height: 1042px;
+    border-radius: 45px 0px 0px 45px;
+    background: url(/23-07-04/images/Flowers.png), lightgray 50% / cover no-repeat;
 }
