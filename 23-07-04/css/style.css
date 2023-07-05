@@ -230,7 +230,7 @@ div#image {
     width: 781.5px;
     height: 1042px;
     border-radius: 45px 0px 0px 45px;
-    background: url(../images/Flowers.png);
+    background: url(/23-07-04/images/Flowers.png);
     background-size:cover;
     background-repeat: no-repeat;
 }
@@ -239,7 +239,7 @@ div#image {
         justify-content: center;
     }
     .container {
-        background: url(../images/Flowers_opac.png);
+        background: url(/23-07-04/images/Flowers_opac.png);
         background-size:cover;
         background-repeat: no-repeat;
     }
