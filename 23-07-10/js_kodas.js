@@ -10,10 +10,10 @@ else {
 }
 
 //2 užduotis
-let vardas = 'Tomas'
-let pavarde = 'Gelazunas'
-let gmetai = '1985'
-let metai = '2023'
+let vardas = 'Tomas';
+let pavarde = 'Gelazunas';
+let gmetai = '1985';
+let metai = '2023';
 
 console.log('Aš esu ' +vardas+' '+pavarde+'.'+' Man yra '+(metai-gmetai)+' metai(-ų).');
 
