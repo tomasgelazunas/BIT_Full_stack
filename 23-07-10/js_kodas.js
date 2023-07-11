@@ -25,10 +25,10 @@ console.log(`Aš esu ${vardas} ${pavarde}. Man yra ${metai - gmetai} metai(-ų).
 
 //********************** 3 užduotis **************************
 
-let name = 'Angelina';
+let actname = 'Angelina';
 let surname = 'Jolie';
 
-let rezultatas = name.substring(5) + surname.substring(2);
+let rezultatas = actname.substring(5) + surname.substring(2);
 console.log(rezultatas);
 
 //geriau taip, tada galima keisti aa ir bb ir kodas parodys rezultatą:
