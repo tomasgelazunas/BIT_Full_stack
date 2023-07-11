@@ -25,15 +25,15 @@ console.log(`Aš esu ${vardas} ${pavarde}. Man yra ${metai - gmetai} metai(-ų).
 
 //********************** 3 užduotis **************************
 
-let aa = 'Angelina';
-let bb = 'Jolie';
+let name = 'Angelina';
+let surname = 'Jolie';
 
-let rezultatas = aa.substring(5) + bb.substring(2);
+let rezultatas = name.substring(5) + surname.substring(2);
 console.log(rezultatas);
 
 //geriau taip, tada galima keisti aa ir bb ir kodas parodys rezultatą:
 
-// const aa = "Angelina";
-// const bb = "Jolie";
-// let rezultatas = aa[aa.length - 3] + aa[aa.length - 2] + aa[aa.length - 1] + bb[bb.length - 3] + bb[bb.length - 2] + bb[bb.length - 1];
-// console.log(rezultatas);
+const aa = "Angelina";
+const bb = "Jolie";
+let rezultatas2 = aa[aa.length - 3] + aa[aa.length - 2] + aa[aa.length - 1] + bb[bb.length - 3] + bb[bb.length - 2] + bb[bb.length - 1];
+console.log(rezultatas2);
