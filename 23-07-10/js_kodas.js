@@ -31,3 +31,9 @@ let bb = 'Jolie';
 let rezultatas = aa.substring(5) + bb.substring(2);
 console.log(rezultatas);
 
+//arba taip geriau, tada galima keisti aa ir bb:
+
+// const aa = "Angelina";
+// const bb = "Jolie";
+// let rezultatas = aa[aa.length - 3] + aa[aa.length - 2] + aa[aa.length - 1] + bb[bb.length - 3] + bb[bb.length - 2] + bb[bb.length - 1];
+// console.log(rezultatas);
