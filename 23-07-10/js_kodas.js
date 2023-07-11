@@ -31,7 +31,7 @@ let bb = 'Jolie';
 let rezultatas = aa.substring(5) + bb.substring(2);
 console.log(rezultatas);
 
-//arba taip geriau, tada galima keisti aa ir bb:
+//geriau taip, tada galima keisti aa ir bb ir kodas parodys rezultatą:
 
 // const aa = "Angelina";
 // const bb = "Jolie";
