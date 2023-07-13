@@ -72,35 +72,36 @@ function rand(min, max) {
   }
  //********************** 5 užduotis **************************
 
-  i = 0
-  let rezultatas = ''
-  let count = 0
+  i = 0;
+  let rezultatas = '';
+  let count = 0;
   
   while (i < 300) {
-    let newNumbers = rand(0, 300)
-    rezultatas += newNumbers + ' '
+    let newNumbers = rand(0, 300);
+    rezultatas += newNumbers + ' ';
     if (newNumbers > 150) {
-      count++
+      count++;
     }
     if (newNumbers > 275) {
-      rezultatas += '<span style="color: red;">' + newNumbers + '</span> '
+      rezultatas += '<span style="color: red;">' + newNumbers + '</span> ';
     }
-    i++
+    i++;
   }
-  console.log(rezultatas)
-  console.log('Skaiciu didesniu uz 150 yra: ', count)
-  document.getElementById('numbers').innerHTML = rezultatas
+  console.log(rezultatas);
+  console.log('Skaiciu didesniu uz 150 yra: ', count);
+  document.getElementById('numbers').innerHTML = rezultatas;
   
 //********************** 6 užduotis **************************
   
-  i = 1
-  let rezult = ''
+  i = 1;
+  let rezult = '';
   
   while (i <= 3000) {
     if (i % 77 === 0) {
-      rezult += i + ','
+      rezult += i + ',';
     }
-    i++
+    i++;
   }
-  rezult = rez.slice(0, -1)
-  console.log(rezult)
+  rezult = rezult.slice(0, -1);
+  console.log(rezult);
+  document.getElementById('number77').innerHTML = rezult;
