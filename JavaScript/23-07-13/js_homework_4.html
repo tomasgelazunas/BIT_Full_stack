@@ -1,26 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JS namų darbas 3</title>
+    <title>Js</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        main {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            flex-wrap: wrap;
+            width: 100%;
+            max-width: 600px;
+            margin: 20px 0;
+        }
+
+        .stars-box {
+            display: flex;
+            height: 300px;
+            width: 300px;
+            flex-wrap: wrap;
+        }
+
+        .stars-box > span {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 30px;
+            width: 30px;
+            flex-basis: 30px;
+        }
+
+        div {
+            margin: 20px 0;
+        }
+    </style>
 </head>
+
 <body>
-   <!--1 užduotis CSS-->
-    <p style="word-break: break-all;">****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************</p>
-    
-    <span id="stars"></span>
-    <h3 id="randomNr"></h3>
-    <p id="colors"></p>
-    <p id="string"></p>
-    <br />
-    <span id="numbers"></span>
-    <br />
-    <p id="number77"></p>
+    <main>
+        <div id="stars-box" class="stars-box"></div>
+        <div id="hm" class="hm">
+            <h3>Scene 1:</h3>
+            <div id="scene1"></div>
+            <h3>Scene 2:</h3>
+            <div id="scene2"></div>
+            <h3>Scene 3:</h3>
+            <div id="scene3"></div>
+        </div>
+    </main>
 
-
-
-
-    <script src="js_kodas_4.js" type="text/javascript"></script>
+    <script src="js_kodas_4.js"></script>
 </body>
+
 </html>
