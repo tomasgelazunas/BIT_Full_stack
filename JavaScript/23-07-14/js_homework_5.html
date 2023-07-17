@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>Kazys ir Petras</title>
+	</head>
+	<body>
+		<h2>Šaškės</h2>
+		<div id="saskes"></div>
+		<h2>Silpnas Plaktukas</h2>
+		<div id="silpnasPlaktukas"></div>
+		<h2>Stiprus Plaktukas</h2>
+
+		<div id="stiprusPlaktukas"></div>
+		<h2>Pora pamestų stringų</h2>
+		<div id="stringai"></div>
+		<script>
+                // 1.Kazys ir Petras žaidžiai šaškėm. Petras surenka taškų kiekį nuo 10 iki 20, Kazys surenka taškų kiekį nuo 5 iki 25. Vienoje eilutėje išvesti žaidėjų vardus su taškų kiekiu ir “Partiją laimėjo: ​laimėtojo vardas​”. Taškų kiekį generuokite funkcija ​rand()​. Žaidimą laimi tas, kas greičiau surenka 222 taškus. Partijas kartoti tol, kol kažkuris žaidėjas pirmas surenka 222 arba daugiau taškų.
+                
+                // 2.Sumodeliuokite vinies kalimą. Įkalimo gylį sumodeliuokite pasinaudodami rand() funkcija. Vinnies ilgis 8.5cm (pilnai sulenda į lentą).
+                // “Įkalkite” 5 vinis mažais smūgiais. Vienas smūgis vinį įkala 5-20 mm. Suskaičiuokite kiek reikia smūgių.
+                // “Įkalkite” 5 vinis dideliais smūgiais. Vienas smūgis vinį įkala 20-30 mm, bet yra 50% tikimybė (pasinaudokite rand() funkcija tikimybei sumodeliuoti), kad smūgis nepataikys į vinį. Suskaičiuokite kiek reikia smūgių.
+
+                // 3.Sugeneruokite stringą, kurį sudarytų 50 atsitiktinių skaičių nuo 1 iki 200, atskirtų tarpais. Skaičiai turi būti unikalūs (t.y. nesikartoti). Sugeneruokite antrą stringą, pasinaudodami pirmu, palikdami jame tik pirminius skaičius (t.y tokius, kurie dalinasi be liekanos tik iš 1 ir patys savęs). Skaičius stringe sudėliokite didėjimo tvarka, nuo mažiausio iki didžiausio.
+
+
+			let maxScore = 222;
+			let petrasScore = 0,
+				kazysScore = 0;
+			let rez = "";
+			for (let i = 0; true; i++) {
+				let petrasAdd = rand(10, 20);
+				let kazysAdd = rand(5, 25);
+				rez +=
+					"<p>Petras surinko: " + petrasAdd + ", Kazys surinko: " + kazysAdd;
+				if (kazysAdd > petrasAdd) {
+					kazysScore += kazysAdd;
+					rez += ", partiją laimėjo Kazys";
+				} else if (petrasAdd > kazysAdd) {
+					petrasScore += petrasAdd;
+					rez += ", partiją laimėjo Petras";
+				} else {
+					rez += ", įvyko lygiosios";
+				}
+				rez +=
+					", galutinis rezultatas: Petras(" +
+					petrasScore +
+					"), Kazys(" +
+					kazysScore +
+					")</p>";
+				if (petrasScore >= maxScore) {
+					rez += "Turnyrą laimėjo Petras, surinkęs" + petrasScore + " taškų";
+					break;
+				}
+				if (kazysScore >= maxScore) {
+					rez +=
+						"<b>Turnyrą laimėjo Kazys, surinkęs " + kazysScore + " taškų</b>";
+					break;
+				}
+			}
+			document.getElementById("saskes").innerHTML = rez;
+			function rand(min, max) {
+				min = Math.ceil(min);
+				max = Math.floor(max);
+				return Math.floor(Math.random() * (max - min + 1) + min);
+			}
+			//vinys mazais smugiais
+			rez = "";
+			let viniesIlgis = 85;
+			let turimaViniu = 5;
+			let visoSmugiu = 0;
+			let smugiai = 0;
+			for (let i = 0; true; i++) {
+				let ikalimas = rand(5, 20);
+				viniesIlgis -= ikalimas;
+				smugiai++;
+				if (viniesIlgis <= 0) {
+					turimaViniu--;
+					viniesIlgis = 85;
+					visoSmugiu += smugiai;
+
+					rez +=
+						"<p>ikalta dar viena vinis, prireikė " + smugiai + " smūgių</p>";
+					smugiai = 0;
+					if (turimaViniu <= 0) break;
+				}
+			}
+			document.getElementById("silpnasPlaktukas").innerHTML = rez;
+			rez = "";
+			turimaViniu = 5;
+			visoSmugiu = 0;
+			viniesIlgis = 85;
+			smugiai = 0;
+			for (let i = 0; true; i++) {
+				let ikalimas = rand(20, 25);
+				viniesIlgis -= ikalimas;
+				smugiai++;
+				if (rand(0, 1) === 0) {
+					smugiai++;
+					continue;
+				}
+				if (viniesIlgis <= 0) {
+					turimaViniu--;
+					viniesIlgis = 85;
+					visoSmugiu += smugiai;
+
+					rez +=
+						"<p>ikalta dar viena vinis, prireikė " + smugiai + " smūgių</p>";
+					smugiai = 0;
+					if (turimaViniu <= 0) break;
+				}
+			}
+			document.getElementById("stiprusPlaktukas").innerHTML = rez;
+			let str = "";
+			for (let i = 0; i < 50; i++) {
+				let randN = rand(1, 200);
+				let buvoNutraukta = false;
+				for (let ii = 0; ii < str.length; ii++) {
+					if (str[ii] !== " ") {
+						continue;
+					}
+					let skaicius = parseInt(str.slice(ii + 1));
+					if (skaicius === randN) {
+						buvoNutraukta = true;
+						break;
+					}
+				}
+				if (!buvoNutraukta) {
+					str += randN + " ";
+				}
+			}
+
+			document.getElementById("stringai").innerHTML =
+				"<h3>Atsitiktiniai skaičiai</h3><p>" + str + "</p>";
+			// console.log(str);
+
+			let str2 = "<h3>Pirminiai skaičiai</h3><p>";
+			let index = 0;
+			while (index < str.length) {
+				let end = str.indexOf(" ", index);
+				if (end === -1) {
+					end = str.length;
+				}
+				let skaiciusText = str.slice(index, end);
+				let skaicius = parseInt(skaiciusText);
+				let countOfDividors = 0;
+				for (let ii = 1; ii <= Math.sqrt(skaicius); ii++) {
+					if (skaicius % ii === 0) {
+						countOfDividors++;
+					}
+				}
+				if (skaicius > 1 && countOfDividors === 1) {
+					str2 += skaicius + " ";
+				}
+				index = end + 1;
+			}
+
+			str2 += "</p>";
+
+			function rand(min, max) {
+				min = Math.ceil(min);
+				max = Math.floor(max);
+				return Math.floor(Math.random() * (max - min + 1) + min);
+			}
+
+			document.getElementById("stringai").innerHTML += str2;
+		</script>
+	</body>
+</html>
