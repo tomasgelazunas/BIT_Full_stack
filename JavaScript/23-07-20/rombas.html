@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rombas</title>
+</head>
+<body>
+    <div id="rombas"></div>
+		<script>
+			function rand(min, max) {
+				min = Math.ceil(min);
+				max = Math.floor(max);
+				return Math.floor(Math.random() * (max - min + 1) + min);
+			}
+			function randomColor() {
+				return `rgb(${rand(0, 255)}, ${rand(0, 255)}, ${rand(0, 255)})`;
+			}
+			const height = 41;
+			if (height % 2 !== 1)
+				console.log("Rombas turi buti nelyginio eiluciu skaiciaus aukscio");
+			else {
+				const middle = (height - 1) / 2;
+				let start = middle;
+				let rez = "";
+				let isWiding = true;
+				for (let i = 0; i < height; i++) {
+					for (let ii = 0; ii < start; ii++) {
+						rez += `<color style="color:white">*</color>`;
+					}
+					const until = isWiding ? 2 * i + 1 : height - (i - middle) * 2;
+					for (let ii = 0; ii < until; ii++) {
+						rez += `<color style="color: ${randomColor()}">*</color>`;
+					}
+					// for (let ii = 0; ii < start; ii++) {
+					// 	rez += " ";
+					// }
+					rez += "<br>";
+					if (i === middle) isWiding = false;
+					if (isWiding) start--;
+					else start++;
+				}
+				document.write(rez);
+			}
+		</script>
+</body>
+</html>
