@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+            function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+            }
+            // 1. Sugeneruokite masyvą, kurio reikšmės atsitiktinės raidės A, B, C ir D, o ilgis 200. Suskaičiuokite kiek yra kiekvienos raidės.
+            // 2. Išrūšiuokite 1 uždavinio masyvą pagal abecėlę.
+            // 3. Sugeneruokite 3 masyvus pagal 1 uždavinio sąlygą. Sudėkite masyvus, sudėdami reiksmes pagal atitinkamus indeksus. Paskaičiuokite kiek unikalių (po vieną, nesikartojančių) reikšmių ir kiek unikalių kombinacijų gavote.
+            // 4. Sugeneruokite du masyvus, kurių reikšmės yra atsitiktiniai skaičiai nuo 100 iki 999. Masyvų ilgiai 100. Masyvų reikšmės turi būti unikalios savo masyve (t.y. neturi kartotis).
+            // 5. Sugeneruokite masyvą, kuris būtų sudarytas iš reikšmių, kurios yra pirmame 3 uždavinio masyve, bet nėra antrame 3 uždavinio masyve.
+            // 6. Sugeneruokite masyvą iš elementų, kurie kartojasi abiejuose 4 uždavinio masyvuose.
+            // 7. Sugeneruokite masyvą, kurio indeksus sudarytų pirmo 4 uždavinio masyvo reikšmės, o jo reikšmės būtų iš antrojo masyvo.
+
+      // 1. Sugeneruokite masyvą, kurio reikšmės atsitiktinės raidės A, B, C ir D, o ilgis 200. Suskaičiuokite kiek yra kiekvienos raidės.
+      function rand(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1) + min);
+      }
+
+      const letterArray = [];
+      let counterA = 0;
+      let counterB = 0;
+      let counterC = 0;
+      let counterD = 0;
+
+      for (let i = 0; i < 200; i++) {
+        let skaicius = rand(1, 4);
+        if (skaicius === 1) {
+          letterArray[i] = "A";
+          counterA++;
+        } else if (skaicius === 2) {
+          letterArray[i] = "B";
+          counterB++;
+        } else if (skaicius === 3) {
+          letterArray[i] = "C";
+          counterC++;
+        } else {
+          letterArray[i] = "D";
+          counterD++;
+        }
+      }
+      document.write(
+        `<p style="word-wrap:break-word">Raidžių masyvas: ${letterArray}</p><p>Kiek raidžių A: ${counterA}</p><p>Kiek raidžių B: ${counterB}</p><p>Kiek raidžių C: ${counterC}</p><p>Kiek raidžių D: ${counterD}</p>`
+      );
+      //   2. Išrūšiuokite 1 uždavinio masyvą pagal abecėlę.
+      letterArray.sort();
+      document.write(`<p">Išrūšiuotų raidžių masyvas: ${letterArray}</p>`);
+      //   3. Sugeneruokite 3 masyvus pagal 1 uždavinio sąlygą. Sudėkite masyvus, sudėdami reiksmes pagal atitinkamus indeksus. Paskaičiuokite kiek unikalių (po vieną, nesikartojančių) reikšmių ir kiek unikalių kombinacijų gavote.
+      function arrayGenerator() {
+        const array = [];
+        for (let i = 0; i < 200; i++) {
+          let skaicius = rand(1, 4);
+          if (skaicius === 1) array[i] = "A";
+          else if (skaicius === 2) array[i] = "B";
+          else if (skaicius === 3) array[i] = "C";
+          else array[i] = "D";
+        }
+        return array;
+      }
+
+      const pirmas = arrayGenerator();
+      document.write(`<p class="pink">Pirmas masyvas: ${pirmas}</p>`);
+      const antras = arrayGenerator();
+      document.write(`<p class="pink">Antras masyvas: ${antras}</p>`);
+      const trecias = arrayGenerator();
+      document.write(`<p class="pink">Trečias masyvas: ${trecias}</p>`);
+
+      const masyvas = [];
+      let counterUniqueLetters = 0;
+      for (let i in pirmas) {
+        masyvas[i] = pirmas[i] + antras[i] + trecias[i];
+        if (
+          pirmas[i] !== antras[i] &&
+          pirmas[i] !== trecias[i] &&
+          antras[i] !== trecias[i]
+        )
+          counterUniqueLetters++;
+      }
+
+      let counterUniqueCombinations = 0;
+      for (const value1 of masyvas) {
+        let sumOfValue1 = 0;
+        for (const value2 of masyvas) {
+          if (value1 === value2) sumOfValue1++;
+        }
+        if (sumOfValue1 === 1) counterUniqueCombinations++;
+      }
+      document.write(`<p class="pink">Sudėtų raidžių masyvas: ${masyvas}</p>`);
+      document.write(
+        `<p class="pink">Kiek unikalių reikšmių: ${counterUniqueLetters}</p>`
+      );
+      document.write(
+        `<p class="pink">Kiek unikalių kombinacijų: ${counterUniqueCombinations}</p>`
+      );
+      // 4. Sugeneruokite du masyvus, kurių reikšmės yra atsitiktiniai skaičiai nuo 100 iki 999. Masyvų ilgiai 100. Masyvų reikšmės turi būti unikalios savo masyve (t.y. neturi kartotis).
+      const arrayOne = [];
+      const arrayTwo = [];
+
+      for (let i = 0; i < 100; i++) {
+        while (true) {
+          let skaicius1 = rand(100, 999);
+          if (!arrayOne.includes(skaicius1)) {
+            arrayOne.push(skaicius1);
+            break;
+          }
+        }
+        while (true) {
+          let skaicius2 = rand(100, 999);
+          if (!arrayTwo.includes(skaicius2)) {
+            arrayTwo.push(skaicius2);
+            break;
+          }
+        }
+      }
+
+      document.write(`<p>Masyvas nr. 1: ${arrayOne}</p>`);
+      document.write(`<p>Masyvas nr. 2: ${arrayTwo}</p>`);
+      // 5. Sugeneruokite masyvą, kuris būtų sudarytas iš reikšmių, kurios yra pirmame 3 uždavinio masyve, bet nėra antrame 3 uždavinio masyve.
+      const arrayTask5 = [];
+      for (const i in pirmas) {
+        if (pirmas[i] !== antras[i]) {
+          arrayTask5.push(pirmas[i]);
+        }
+      }
+      document.write(`<p>Penktos užduoties masyvas: ${arrayTask5}</p>`);
+      // 6. Sugeneruokite masyvą iš elementų, kurie kartojasi abiejuose 4 uždavinio masyvuose.
+      const arrayTask6 = [];
+      console.log(arrayOne);
+      console.log(arrayTwo);
+      for (let i = 0; i < 100; i++) {
+        if (arrayOne.includes(arrayTwo[i])) {
+          arrayTask6.push(arrayTwo[i]);
+        }
+      }
+      document.write(`<p>Šeštos užduoties masyvas: ${arrayTask6}</p>`);
+      // 7. Sugeneruokite masyvą, kurio indeksus sudarytų 4 uždavinio pirmojo masyvo reikšmės, o jo reikšmės būtų iš antrojo masyvo.
+      const arrayTask7 = [];
+      for (let i = 0; i < arrayOne.length; i++) {
+        arrayTask7[arrayOne[i]] = arrayTwo[i];
+      }
+      document.write(`<p>Septintos užduoties masyvas: ${arrayTask7}</p>`);
+    </script>
+</body>
+</html>
