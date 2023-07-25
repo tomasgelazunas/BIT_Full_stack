@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+         function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+      //Sugeneruok 100 skaičių, nuo 1 iki 50. Suskaičiuok, kiek kokių skaičių yra.
+      const masyvukas = [];
+      for (let i = 0; i < 100; i++) {
+        number = rand(1,50);
+        masyvukas.push(number);
+      }
+      console.log(`Masyvukas:${masyvukas}`);
+
+      let counter = [];
+      for (const index in masyvukas) {
+        if (typeof counter[masyvukas[index]] === "undefined") {
+          counter[masyvukas[index]] = 0;
+        }
+        counter[masyvukas[index]]++;
+      }
+      console.log(counter);
+    </script>
+  </body>
+</html>
