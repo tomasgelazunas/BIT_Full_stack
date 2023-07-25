@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daugiamačiai masyvai/title>
+    <title>Daugiamačiai masyvai</title>
 </head>
 <body>
     <script>
@@ -12,9 +12,11 @@
             max = Math.floor(max);
             return Math.floor(Math.random() * (max - min + 1) + min);
         }
-// Sugeneruokite masyvą iš 10 elementų, kurio elementai būtų masyvai iš 5 elementų su reikšmėmis nuo 5 iki 25.
+        
+        //1. Sugeneruokite masyvą iš 10 elementų, kurio elementai būtų 
+        //masyvai iš 5 elementų su reikšmėmis nuo 5 iki 25.
 
-    const masyvas = [];
+        const masyvas = [];
         
         for(let i = 0; i < 10; i++) {
             masyvas[i] = [];
@@ -23,18 +25,22 @@
                 masyvas[i][x] = rand(5, 25);
             }
         }
-    console.log(masyvas);
 
-// 1. Naudodamiesi 1 uždavinio masyvu:
-//   a. Suskaičiuokite kiek masyve yra elementų didesnių už 10;
+        console.log(masyvas);
 
+        // 2. Naudodamiesi 1 uždavinio masyvu:
+            // a. Suskaičiuokite kiek masyve yra elementų didesnių už 10;
+            // b. Raskite didžiausio elemento reikšmę;
+            // c. Suskaičiuokite kiekvieno antro lygio masyvų su vienodais indeksais sumas (t.y. suma reikšmių turinčių indeksą 0, 1 ir t.t.)
+            // d. Visus antro lygio masyvus “pailginkite” iki 7 elementų
+        
         let counter = 0;
 
         masyvas.filter(value => {
             const filtered = value.filter(digit => digit > 10);
             counter += filtered.length;
         });
-
+        
         // counter = 0;
 
         // for(const child of masyvas) {
@@ -44,27 +50,22 @@
         //     }
         // }
 
-       console.log('Reikšmių didesnių nei dešimt yra: ', counter);
-
-//   b. Raskite didžiausio elemento reikšmę;
-
+        console.log('Reikšmių didesnių nei dešimt yra: ', counter);
+        
         let max = 0;
 
-                for(const child of masyvas) {
-                    for(const value of child) {
-                        if(value > max)
-                            max = value;
-                    }
-                }
+        for(const child of masyvas) {
+            for(const value of child) {
+                if(value > max)
+                    max = value;
+            }
+        }
 
         console.log('Didžiausia reikšmė elementuose yra:', max);
-
-//   c.Suskaičiuokite kiekvieno antro lygio masyvų su vienodais indeksais sumas (t.y. suma reikšmių turinčių indeksą 0, 1 ir t.t.)
-//   d. Visus antro lygio masyvus “pailginkite” iki 7 elementų
-// 2. Sukurkite masyvą iš 10 elementų. Kiekvienas masyvo elementas turi būti masyvas su atsitiktiniu kiekiu nuo 2 iki 20 elementų. Elementų reikšmės atsitiktinai parinktos raidės iš intervalo A-Z.
-//    Išrūšiuokite antro lygio masyvus pagal abėcėlę (t.y. tuos kur su raidėm).
-// 3. Išrūšiuokite trečio uždavinio pirmo lygio masyvą taip, kad elementai kurių masyvai trumpiausi eitų pradžioje. Masyvai kurie turi bent vieną “K” raidę, visada būtų didžiojo masyvo visai pradžioje.
-
+        
+// 3. Sukurkite masyvą iš 10 elementų. Kiekvienas masyvo elementas turi būti masyvas su atsitiktiniu kiekiu nuo 2 iki 20 elementų. Elementų reikšmės atsitiktinai parinktos raidės iš intervalo A-Z.
+   // Išrūšiuokite antro lygio masyvus pagal abėcėlę (t.y. tuos kur su raidėm).
+// 4. Išrūšiuokite trečio uždavinio pirmo lygio masyvą taip, kad elementai kurių masyvai trumpiausi eitų pradžioje. Masyvai kurie turi bent vieną “K” raidę, visada būtų didžiojo masyvo visai pradžioje.
 
     </script>
 </body>
