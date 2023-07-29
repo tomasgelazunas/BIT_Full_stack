@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS praktika 2 testas</title>
+</head>
+<body>
+    <script>
+
+        function rand(min, max) {
+				min = Math.ceil(min);
+				max = Math.floor(max);
+				return Math.floor(Math.random() * (max - min + 1) + min);
+			}
+      // 1. Palyginti du skaičius a ir b. Išvesti į konsolę, kuris didesnis arba jie lygūs. (4 taškai)
+
+      console.log(`1 užduotis`);
+			const a = 10, b = 10;
+			if (a > b)console.log(`a: ${a}, b: ${b}. Rezultatas: a yra daugiau už b`);
+			else if (a === b) console.log(`a: ${a}, b: ${b}. Rezultatas: a yra lygu b`);
+			else console.log(`a: ${a}, b: ${b}. Rezultatas: a yra mažiau už b`);
+
+      // 2. Naudojant for ciklą, išvesti į konsolę skaičius nuo 1 iki 10. (5 taškai)
+
+			console.log(`2 užduotis`);
+			for (let i = 1; i <= 10; i++)
+      console.log(i);
+
+			// 3. Naudojant for ciklą, išvesti į konsolę skaičius nuo 0, 2, 4, 6, 8, 10. (5 taškai)
+
+			console.log(`3 užduotis`);
+			for (let i = 0; i <= 10; i++)
+      if (i % 2 === 0)
+      console.log(i);
+
+			// 4. Naudojant for ciklą, sugeneruoti penkis atsitiktinius skaičius nuo 1 iki 10. Išvesti juos konsolėje. (5 taškai)
+
+			console.log(`4 užduotis`);
+			let x = [];
+			for (let i = 0; i < 5; i++) x.push(rand(1, 10));
+			console.log(x);
+
+			// 5. Naudojant while ciklą, spausdinti atsitiktinius skaičius nuo 1 iki 10. Paskutinis atspausdintas skaičius turi būti 5. (7 taškai)
+
+			console.log(`5 užduotis`);
+			let y;
+			do {
+        y = rand(1, 10)
+				console.log(y);
+			} while (y !== 5);
+
+			// 6. Sukurti masyvą, kurio ilgis būtų nuo 20 iki 30, o reikšmės būtų skaičiai nuo 10 iki 30. Surasti didžiausią masyvo reikšmę, NENAUDOJANT sort() bei Math.max() funkcijų. (7 taškai)
+
+			console.log(`6 užduotis`);
+			let masyvas = [];
+      let max = 0
+			let masyvasLength = rand(20, 30);
+			for (let i = 0; i < masyvasLength; i++) {
+        let a = (rand(10, 30));
+        masyvas.push(a);
+        if (a > max) max = a;
+      }
+			console.log(masyvas);
+      console.log(`Masyvo didžiausia reikšmė: ${max}`);
+
+    </script>
+</body>
+</html>
