@@ -13,46 +13,53 @@
 				max = Math.floor(max);
 				return Math.floor(Math.random() * (max - min + 1) + min);
 			}
-      // 1. Palyginti du skaičius a ir b. Išvesti į konsolę, kuris didesnis arba jie lygūs. (4 taškai)
+
+  // 1. Palyginti du skaičius a ir b. Išvesti į konsolę, kuris didesnis arba jie lygūs. (4 taškai)
 
       console.log(`1 užduotis`);
+
 			const a = 10, b = 10;
 			if (a > b)console.log(`a: ${a}, b: ${b}. Rezultatas: a yra daugiau už b`);
 			else if (a === b) console.log(`a: ${a}, b: ${b}. Rezultatas: a yra lygu b`);
 			else console.log(`a: ${a}, b: ${b}. Rezultatas: a yra mažiau už b`);
 
-      // 2. Naudojant for ciklą, išvesti į konsolę skaičius nuo 1 iki 10. (5 taškai)
+  // 2. Naudojant for ciklą, išvesti į konsolę skaičius nuo 1 iki 10. (5 taškai)
 
 			console.log(`2 užduotis`);
+
 			for (let i = 1; i <= 10; i++)
       console.log(i);
 
-			// 3. Naudojant for ciklą, išvesti į konsolę skaičius nuo 0, 2, 4, 6, 8, 10. (5 taškai)
+	// 3. Naudojant for ciklą, išvesti į konsolę skaičius nuo 0, 2, 4, 6, 8, 10. (5 taškai)
 
 			console.log(`3 užduotis`);
+
 			for (let i = 0; i <= 10; i++)
       if (i % 2 === 0)
       console.log(i);
 
-			// 4. Naudojant for ciklą, sugeneruoti penkis atsitiktinius skaičius nuo 1 iki 10. Išvesti juos konsolėje. (5 taškai)
+	// 4. Naudojant for ciklą, sugeneruoti penkis atsitiktinius skaičius nuo 1 iki 10. Išvesti juos konsolėje. (5 taškai)
 
 			console.log(`4 užduotis`);
+
 			let x = [];
 			for (let i = 0; i < 5; i++) x.push(rand(1, 10));
 			console.log(x);
 
-			// 5. Naudojant while ciklą, spausdinti atsitiktinius skaičius nuo 1 iki 10. Paskutinis atspausdintas skaičius turi būti 5. (7 taškai)
+	// 5. Naudojant while ciklą, spausdinti atsitiktinius skaičius nuo 1 iki 10. Paskutinis atspausdintas skaičius turi būti 5. (7 taškai)
 
 			console.log(`5 užduotis`);
+
 			let y;
 			do {
         y = rand(1, 10)
 				console.log(y);
 			} while (y !== 5);
 
-			// 6. Sukurti masyvą, kurio ilgis būtų nuo 20 iki 30, o reikšmės būtų skaičiai nuo 10 iki 30. Surasti didžiausią masyvo reikšmę, NENAUDOJANT sort() bei Math.max() funkcijų. (7 taškai)
+	// 6. Sukurti masyvą, kurio ilgis būtų nuo 20 iki 30, o reikšmės būtų skaičiai nuo 10 iki 30. Surasti didžiausią masyvo reikšmę, NENAUDOJANT sort() bei Math.max() funkcijų. (7 taškai)
 
 			console.log(`6 užduotis`);
+
 			let masyvas = [];
       let max = 0
 			let masyvasLength = rand(20, 30);
@@ -63,7 +70,85 @@
       }
 			console.log(masyvas);
       console.log(`Masyvo didžiausia reikšmė: ${max}`);
+  // 7. Sugeneruokite masyvą, kurio reikšmės atsitiktinės raidės A, B, C ir D, o ilgis 100. Suskaičiuokite kiek yra kiekvienos raidės. (7 taškai)
 
+      console.log(`7 užduotis`);
+
+      const array = [];
+      const raides = `ABCD`;
+      let A = 0;
+      let B = 0;
+      let C = 0;
+      let D = 0;
+      for (let i = 0; i < 100; i++) {
+        let randraides = raides[rand(0, 3)];
+        array.push(randraides);
+        if (randraides === `A`) A++;
+        else if (randraides === `B`) B++;
+        else if (randraides === `C`) C++;
+        else D++;
+      }
+      console.log(array);
+      console.log(`Raidžių A yra ${A}, B ${B}, C ${C}, D ${D}`);
+
+  // 8. Parašyti funkciją - lygineSuma. Funkcijos parametrai - du kintamieji. Testų reikalavimai - abu kitamieji turi būti arba skaičiai arba masyvai(negali būti vienas skaičius, kitas masyvas).
+  // Jei kintamieji skaičiai, grąžinti skaičių sumą, jei kintamieji masyvai - grąžinti masyvų ilgių sumą. Jei abu kintamieji skaičiai arba masyvai, bet suma nelyginė - grąžinti tekstą, kad suma nelyginė. (10 taškų)
+
+      console.log(`8 užduotis`);
+
+      function lygineSuma(aa, bb) {
+      if (typeof aa === `number` && typeof bb === `number`) {
+        let sum1 = aa + bb;
+        if (sum1 % 2 === 1) console.log(`suma yra nelyginė`);
+        return sum1;
+      } else if (Array.isArray(aa) && Array.isArray(bb)) {
+        let sum2 = aa.length + bb.length;
+        if (sum2 % 2 === 1) console.log(`suma yra nelyginė`);
+        return sum2;
+      }
+       }
+      //pavyzdžiai
+      console.log(`Kintamieji yra skaičiai ir jų suma =`, lygineSuma(1, 1));
+      console.log(`Kintamieji yra masyvai ir jų ilgių suma =`, lygineSuma([1, 2, 3, 4], [5, 6, 7, 8]));
+			console.log(lygineSuma(1, 2));
+			console.log(lygineSuma([1, 2, 3, 4], [5, 6, 7, 8, 9]));
+	
+  // 9. Parašyti funkciją pirminisSkaicius. Funkcija turi vieną kintamąjį. Turi būti patikrinimas, kad kintamasis yra skaičius.
+  // Funkcija turi grąžinti ar pateiktas skaičius yra pirminis( pirminis skaičius yra tas, kuris dalinasi tik iš savęs ir tik iš vieneto be liekanos.) (10 taškų)
+
+      console.log(`9 užduotis`);
+
+			function pirminisSkaicius(y) {
+				if (typeof y !== `number`) return `Kintamasis y nėra skaičius`;
+				if (y < 2) return `Pirminis skaičius turi būti didesnis nei 1`;
+				let daliklis = 0;
+				for (let i = 2; i <= y; i++) if (y % i === 0) daliklis++;
+				return daliklis === 1;
+			}
+      //pavyzdžiai
+      console.log(pirminisSkaicius('w'));
+      console.log(pirminisSkaicius(1));
+			console.log(pirminisSkaicius(2));
+			console.log(pirminisSkaicius(4));
+
+
+  // 10. Parašyti funkciją telefonoNumeris. Funkcija turi priimti vieną kintamąjį - masyvą. Masyvo elementai - skaičiai, ilgis - 10.
+  // Funkcija turi grąžinti telefono numerį tokiu formatu - "(XXX) XXX-XXXX". (10 taškų)
+
+      console.log(`10 užduotis`);
+
+      function telefonoNumeris(mas) {
+        if (typeof mas !== `object`) return `Kintamasis nėra masyvas`;
+				if (mas.length !== 10) return `Tel. Nr. yra per mažai skaičių. Turi būti 10`;
+				for (const val of mas) if (typeof val !== `number`) return `Tel. Nr. turi sudaryti tik skaičiai`;
+
+				return `"(${mas[0]}${mas[1]}${mas[2]}) ${mas[3]}${mas[4]}${mas[5]}-${mas[6]}${mas[7]}${mas[8]}${mas[9]}"`;
+			}
+    //pavyzdžiai
+      console.log(telefonoNumeris([8, 6, 0, 0, 0, 0, 0, 1, 2, 3]));
+      console.log(telefonoNumeris([8, 6, 0, 0, 0, 0, 0, 1, 2]));
+      console.log(telefonoNumeris([8, 6, 0, 0, 0, 0, 0, 1, 2, 'a']));
+      
     </script>
 </body>
 </html>
