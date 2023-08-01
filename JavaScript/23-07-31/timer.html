@@ -11,11 +11,15 @@
     <title>Timer</title>
     <style>
       body {
-        word-wrap: break-word;
+        display: flex;
+        flex-direction: column;
         font-family: 'Open Sans', sans-serif;
+        align-items: center;
+        margin: 50px auto;
+        
       }
       #timer {
-        background-color: grey;
+        background-color: rgba(0, 0, 0, 0.925);
         width: 600px;
         height: 250px;
         font-size: 80px;
@@ -31,21 +35,21 @@
         height: 30px;
         width: 100px;
         border: none;
-        background-color: rgb(185, 185, 185);
+        background-color: rgb(8, 179, 122);
         border-radius: 5px;
       }
 
       .buttons {
-        margin-left: 190px;
         margin-top: 20px;
         display: flex;
+        flex-direction: row;
         gap: 20px;
       }
     </style>
   </head>
   <body>
     <div id="timer">
-      <p>05m:00s</p>
+      <p>5m:00s</p>
     </div>
     <div class="buttons">
       <button class="startBtn" onclick="run(event)">Start</button>

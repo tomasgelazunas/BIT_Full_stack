@@ -19,12 +19,12 @@ function run(e) {
       }
     }, 1000)
     e.target.textContent = 'Pause'
-    e.target.style.backgroundColor = 'rgb(235, 235, 235)'
+    e.target.style.backgroundColor = 'grey'
     timerRunning = true
   } else {
     clearInterval(interval)
     e.target.textContent = 'Start'
-    e.target.style.backgroundColor = 'rgb(185, 185, 185)'
+    e.target.style.backgroundColor = 'rgb(8, 179, 122)'
     timerRunning = false
   }
 }
@@ -33,12 +33,11 @@ document.querySelector('.startBtn').onclick = run
 
 function reset() {
   clearInterval(interval)
-  time = 600
+  time = 300
   const startBtn = document.querySelector('.startBtn')
   startBtn.textContent = 'Start'
-  startBtn.style.backgroundColor = 'rgb(185, 185, 185)'
   const timer = document.getElementById('timer')
-  timer.innerHTML = '05m:00s'
+  timer.innerHTML = '5m:00s'
 }
 
 document.querySelector('.resetBtn').onclick = reset
