@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Square game</title>
+  </head>
+  <style>
+    h1 {
+      text-align: center;
+      margin: 15px auto;
+    }
+    .description {
+      text-align: center;
+    }
+    .description p:first-child {
+      font-size: 25px;
+      font-weight: bold;
+    }
+    button {
+      display: block;
+      margin: 30px auto;
+      padding: 5px 15px;
+      font-weight: bold;
+      border-radius: 5px;
+      border: none;
+      background-color: lawngreen;
+      font-size: 25px;
+    }
+    .row {
+      display: flex;
+      width: 60%;
+      margin: 50px auto;
+    }
+    .col-6 {
+      width: 50%;
+    }
+    .bigSquare {
+      background-color: lawngreen;
+      width: 400px;
+      height: 400px;
+      position: relative;
+      margin: 0 auto;
+    }
+    .square {
+      width: 50px;
+      height: 50px;
+      background-color: yellowgreen;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+    .timer {
+      text-align: center;
+      font-size: 30px;
+      font-weight: bold;
+      width: 400px;
+      margin: 0 auto;
+    }
+    .points1,
+    .points2 {
+      font-size: 30px;
+      text-align: left;
+    }
+  </style>
+  <body>
+    <h1>Square game</h1>
+    <div class="description">
+      <p class="timer">Hey dude :)</p>
+      <p class="result"></p>
+    </div>
+    <button onclick="start()">Start</button>
+    <div class="row">
+      <div class="col-6">
+        <p class="points1">My points: 0</p>
+        <p class="points2">Computer points: 0</p>
+      </div>
+      <div class="bigSquare">
+        <div class="square" onclick="pick(event)"></div>
+      </div>
+    </div>
+  </body>
+  <script>
+    function rand(min, max) {
+      min = Math.ceil(min);
+      max = Math.floor(max);
+      return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+    const square = document.querySelector(".square");
+    const buttonStop = document.querySelector("button");
+    const timer = document.querySelector(".timer");
+    const points1 = document.querySelector(".points1");
+    const points2 = document.querySelector(".points2");
+    let time = 30;
+    let myPoints = 0;
+    let computerPoints = 0;
+    let clicked = false;
+    function start() {
+      myPoints = 0;
+      points1.textContent = "My points: 0";
+      const interval = setInterval(() => {
+        if (!clicked && time != 30) computerPoints++;
+        clicked = false;
+        square.style.left = rand(0, 350) + "px";
+        square.style.top = rand(0, 350) + "px";
+        square.style.backgroundColor = `rgb(${rand(0, 255)}, ${rand(
+          0,
+          255
+        )},${rand(0, 255)})`;
+        buttonStop.disabled = true;
+        points2.textContent = "Computer points: " + computerPoints;
+        timer.textContent = "Laikas: " + time + " s";
+        time--;
+        if (time < 0) {
+          clearInterval(interval);
+          time = 0;
+          buttonStop.disabled = false;
+        }
+      }, 1000);
+      time = 30;
+    }
+    function pick(e) {
+      if (buttonStop.disabled) {
+        if (clicked) return;
+        clicked = true;
+        myPoints++;
+        points1.textContent = "My points: " + myPoints;
+      }
+    }
+  </script>
+</html>
