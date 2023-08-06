@@ -90,9 +90,9 @@
               let time = 0;
               let timerRunning = false;
               function run(event) {
-                let numcheck;
-                if (typeof numcheck !== 'number') {
-                  alert(`Neįvedėte nieko arba įvedėte ne skaičių. Įveskite, pvz., 5 arba 10`);
+                let numcheck = parseInt(inputValue.value);
+                if (isNaN(numcheck)) {
+                  alert(`Neįvedėte nieko arba įvedėte ne skaičių. Įveskite, pvz., 10 arba 0.5`);
                   return;
                 }
                 if (!timerRunning) {
