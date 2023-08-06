@@ -102,7 +102,7 @@
         </div>
         <div id="alert"></div>
         <audio id="garsas" src="classic-alarm-995.wav"></audio>
-        
+
         <!-- JS -->
         <script>
               //Deklaruojam kintamuosiu ir tikrinam, kas įvesta
@@ -137,6 +137,7 @@
                 event.target.textContent = 'Start';
                 timer.style.cssText= 'text-align: center; color:#69070a';
                 timer.innerHTML = `Sorry, laikas jau baigėsi!`;
+                document.getElementById('garsas').play();
                 shake();
               }
 
