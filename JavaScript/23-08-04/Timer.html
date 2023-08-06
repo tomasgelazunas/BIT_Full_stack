@@ -139,6 +139,15 @@
                 inputValue = document.getElementById('min');
               }
               document.querySelector('.resetBtn').onclick = reset;
+
+              // Drebėjimas
+              function shake() {
+                let timeisOver = document.querySelector('.box');
+                timeisOver.classList.add('shake');
+                setTimeout(() => {
+                  timeisOver.classList.remove('shake');
+                }, 5000)
+              }
         </script>
 </body>
 </html>
