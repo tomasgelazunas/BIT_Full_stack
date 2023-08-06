@@ -81,5 +81,52 @@
             <button class="startBtn" onclick="run(event)">Start</button>
             <button class="resetBtn" onclick="reset(e)">Reset</button>
         </div>
+        <script>
+              //Deklaruojam kintamuosiu ir tikrinam, kas įvesta
+              let interval;
+              let timer = document.getElementById('timeris');
+              let startBtn = document.querySelector('.startBtn');
+              let inputValue = document.getElementById('min');
+              let time = 0;
+              let timerRunning = false;
+              function run(event) {
+                let numcheck;
+                if (typeof numcheck !== 'number') {
+                  alert(`Neįvedėte nieko arba įvedėte ne skaičių. Įveskite, pvz., 5 arba 10`);
+                  return;
+                }
+                if (!timerRunning) {
+                  if (time === 0) {
+                    time = inputValue.value * 60;
+                  }
+              //Laiko konvertavimas ir atvaizdavimas
+              interval = setInterval(() => {
+                let min = Math.floor(time / 60);
+                let seconds = time % 60;
+                let newTime = `${min}m : ${seconds.toString().padStart(2, '0')}s`;
+                timer.innerHTML = newTime;
+                time--;
+
+              //Laiko pabaiga
+              if (time < 0) {
+                clearInterval(interval);
+                timerRunning = false;
+                event.target.textContent = 'Start';
+                timer.style.cssText= 'text-align: center; color:#69070a';
+                timer.innerHTML = `Sorry, laikas jau baigėsi!`;
+                shake();
+              }
+
+              }, 1000)
+                event.target.textContent = 'Pause';
+                timerRunning = true;
+              } else {
+                clearInterval(interval);
+                event.target.textContent = 'Start';
+                timerRunning = false;
+              }
+              }
+              document.querySelector('.startBtn').onclick = run;
+        </script>
 </body>
 </html>
