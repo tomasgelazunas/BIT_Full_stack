@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .remove-border {
+            border: none !important;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section class="my-3">
+            <div class="container">
+                <form onsubmit="search(event);">
+                    <div class="row form-group">
+                        <div class="col col-12 col-sm-10">
+                            <input type="text" placeholder="Search" class="w-100 form-control">
+                        </div>
+                        <div class="col col-12 col-sm-2">
+                            <button class="btn btn-primary">Search</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <nav aria-label="Page navigation example text-align-center" id="pagination">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item" id="previous-page">
+                            <a class="page-link" href="#">Previous</a>
+                        </li>
+
+                        <li class="page-item" id="next-page">
+                            <a class="page-link" href="#">Next</a>
+                        </li>
+                    </ul>
+                    <div id="pages-info" class="text-center text-muted"></div>
+                </nav>
+            </div>
+        </section>
+
+        <section class="my-3">
+            <div class="container">
+                <h2 class="mb-5">Movies</h2>
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-5" id="movies-list">
+                </div>
+            </div>
+        </section>
+    </main>
+    <script>
+        const data = {
+    apiKey: '7b1aaa3',
+    page: 1,
+    maxPage: 0,
+    prevAllow: false,
+    nextAllow: true,
+    search: 'marvel'
+}
+
+const fetchMovies = () => {
+    fetch(`https://www.omdbapi.com/?s=${data.search}&page=${data.page}&apikey=${data.apiKey}`)
+        .then(res => res.json())
+        .then(res => {
+            handleMovies(res);
+            handlePagination(res.Search, res.totalResults);
+        });
+}
+
+const handleMovies = res => {
+    document.getElementById('movies-list').innerHTML = '';
+
+    res.Search.forEach(el => appendMovie(el));
+}
+
+const appendMovie = movie => {
+    const node = document.createElement('DIV');
+    node.className = 'card my-3 remove-border';
+    node.innerHTML = `
+    <img src="${movie.Poster}" class="card-img-top" alt="...">
+    <div class="card-body">
+    <h5 class="card-title">${movie.Title}</h5>
+    <p>${movie.Year}</p>
+    </div>
+    `;
+    document.getElementById('movies-list').append(node);
+}
+
+const handlePagination = (movies, totalResults) => {
+    const max = ((data.page - 1) * 10) + movies.length;
+    data.maxPage = Math.ceil(+totalResults / 10);
+
+    const nextEl = document.getElementById('next-page');
+
+    handlePNItems(nextEl, max, totalResults);
+    appendPagesNumbers(nextEl);
+
+    document.getElementById('pages-info').textContent = `${data.page} / ${data.maxPage}`;
+}
+
+const handlePNItems = (nextEl, max, totalResults) => {
+    const prevEl = document.getElementById('previous-page');
+
+    if (data.page === 1) {
+        prevEl.classList.add('disabled');
+
+        data.prevAllow = false;
+    } else {
+        prevEl.classList.remove('disabled');
+
+        data.prevAllow = true;
+    }
+
+    if (max >= +totalResults) {
+        nextEl.classList.add('disabled');
+
+        data.nextAllow = false;
+    } else {
+        nextEl.classList.remove('disabled');
+
+        data.nextAllow = true;
+    }
+}
+
+const appendPagesNumbers = nextEl => {
+    document.querySelectorAll('.page-number-item').forEach(el => el.remove());
+
+    let dots1 = false;
+    let dots2 = false;
+
+    for (let i = 1; i <= data.maxPage; i++) {
+        if (data.page + 3 > i && data.page - 3 < i || i === 1 || i === data.maxPage) {
+            appendPageNumber(i, nextEl);
+        }
+
+        if (!(data.page + 4 > i)) dots1 = true;
+        if (!(data.page - 4 < i)) dots2 = true;
+    }
+
+    const elements = document.querySelectorAll('.page-item');
+
+    if (dots1) appendPageNumber(0, elements[elements.length - 2]);
+    if (dots2) appendPageNumber(0, elements[2]);
+}
+
+const appendPageNumber = (index, nextEl) => {
+    const node = document.createElement('LI');
+    node.className = 'page-item page-number-item d-none d-sm-block';
+
+    node.onclick = () => { pageOnClick(index) };
+
+    node.innerHTML = `<a class="page-link ${index === data.page ? 'active' : ''}" href="#">${index}</a>`;
+    node.innerHTML = index > 0 ? node.innerHTML : '<span class="page-link">...</span>';
+    document.querySelector('#pagination > ul').insertBefore(node, nextEl);
+}
+
+const pageOnClick = index => {
+    if (index === 0) return;
+
+    data.page = index;
+
+    fetchMovies();
+}
+
+document.getElementById('next-page').addEventListener('click', () => {
+    if (!data.nextAllow) return;
+
+    data.page++;
+
+    fetchMovies();
+});
+
+document.getElementById('previous-page').addEventListener('click', () => {
+    if (!data.prevAllow) return;
+
+    data.page--;
+
+    fetchMovies();
+});
+
+window.search = e => {
+    const value = e.target.querySelector('input').value;
+
+    data.page = 1;
+    data.search = value;
+
+    fetchMovies();
+
+    e.target.querySelector('input').value = '';
+}
+
+fetchMovies();
+    </script>
+</body>
+
+</html>
