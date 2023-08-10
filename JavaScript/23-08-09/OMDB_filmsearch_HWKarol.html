@@ -60,147 +60,159 @@
         </section>
     </main>
     <script>
-        const data = {
-    apiKey: '7b1aaa3',
-    page: 1,
-    maxPage: 0,
-    prevAllow: false,
-    nextAllow: true,
-    search: 'marvel'
-}
+// Užduotis
+// Step 1: Susikurkite OMDb api raktą (https://www.omdbapi.com/).
+// Step 2: Paimkite marvel filmų ir serialų sąrašą pagal suformuotą API nuorodą: 
+// https://www.omdbapi.com/?apikey=[API_KEY]&s=marvel
+// Step 3: Atvaizduokite 10 gautų filmų puslapyje.
+// Step 4: Sukurkite puslapiavimo funkcionalumą pasinaudojant mygtukais "Previous" ir "Next".
+// Atidarius tinklapį, pagal nutylėjimą (default), atvaizduojamas pirmasis puslapis. 
+// Paspaudus ant mygtuko sekantis vartotojas yra nukreipiamas į antrajį puslapį ir t.t.
+// Jeigu vartotojas yra pirmame puslapyje, mygtukas "Previous" turi turėti priskirtą atributą "disabled" ir nukreipimas yra stabdomas.
+// Tą patį atlikite su mygtuku "Next" jei varotojas yra paskutiniame puslapyje.
+// Patikrinkite puslapiavimo veikimą su kitomis trijomis paieškos frazėmis.
 
-const fetchMovies = () => {
-    fetch(`https://www.omdbapi.com/?s=${data.search}&page=${data.page}&apikey=${data.apiKey}`)
-        .then(res => res.json())
-        .then(res => {
-            handleMovies(res);
-            handlePagination(res.Search, res.totalResults);
-        });
-}
+            const data = {
+                apiKey: '7b1aaa3',
+                page: 1,
+                maxPage: 0,
+                prevAllow: false,
+                nextAllow: true,
+                search: 'marvel'
+            }
 
-const handleMovies = res => {
-    document.getElementById('movies-list').innerHTML = '';
+            const fetchMovies = () => {
+                fetch(`https://www.omdbapi.com/?s=${data.search}&page=${data.page}&apikey=${data.apiKey}`)
+                    .then(res => res.json())
+                    .then(res => {
+                        handleMovies(res);
+                        handlePagination(res.Search, res.totalResults);
+                    });
+            }
 
-    res.Search.forEach(el => appendMovie(el));
-}
+            const handleMovies = res => {
+                document.getElementById('movies-list').innerHTML = '';
 
-const appendMovie = movie => {
-    const node = document.createElement('DIV');
-    node.className = 'card my-3 remove-border';
-    node.innerHTML = `
-    <img src="${movie.Poster}" class="card-img-top" alt="...">
-    <div class="card-body">
-    <h5 class="card-title">${movie.Title}</h5>
-    <p>${movie.Year}</p>
-    </div>
-    `;
-    document.getElementById('movies-list').append(node);
-}
+                res.Search.forEach(el => appendMovie(el));
+            }
 
-const handlePagination = (movies, totalResults) => {
-    const max = ((data.page - 1) * 10) + movies.length;
-    data.maxPage = Math.ceil(+totalResults / 10);
+            const appendMovie = movie => {
+                const node = document.createElement('DIV');
+                node.className = 'card my-3 remove-border';
+                node.innerHTML = `
+                <img src="${movie.Poster}" class="card-img-top" alt="...">
+                <div class="card-body">
+                <h5 class="card-title">${movie.Title}</h5>
+                <p>${movie.Year}</p>
+                </div>
+                `;
+                document.getElementById('movies-list').append(node);
+            }
 
-    const nextEl = document.getElementById('next-page');
+            const handlePagination = (movies, totalResults) => {
+                const max = ((data.page - 1) * 10) + movies.length;
+                data.maxPage = Math.ceil(+totalResults / 10);
 
-    handlePNItems(nextEl, max, totalResults);
-    appendPagesNumbers(nextEl);
+                const nextEl = document.getElementById('next-page');
 
-    document.getElementById('pages-info').textContent = `${data.page} / ${data.maxPage}`;
-}
+                handlePNItems(nextEl, max, totalResults);
+                appendPagesNumbers(nextEl);
 
-const handlePNItems = (nextEl, max, totalResults) => {
-    const prevEl = document.getElementById('previous-page');
+                document.getElementById('pages-info').textContent = `${data.page} / ${data.maxPage}`;
+            }
 
-    if (data.page === 1) {
-        prevEl.classList.add('disabled');
+            const handlePNItems = (nextEl, max, totalResults) => {
+                const prevEl = document.getElementById('previous-page');
 
-        data.prevAllow = false;
-    } else {
-        prevEl.classList.remove('disabled');
+                if (data.page === 1) {
+                    prevEl.classList.add('disabled');
 
-        data.prevAllow = true;
-    }
+                    data.prevAllow = false;
+                } else {
+                    prevEl.classList.remove('disabled');
 
-    if (max >= +totalResults) {
-        nextEl.classList.add('disabled');
+                    data.prevAllow = true;
+                }
 
-        data.nextAllow = false;
-    } else {
-        nextEl.classList.remove('disabled');
+                if (max >= +totalResults) {
+                    nextEl.classList.add('disabled');
 
-        data.nextAllow = true;
-    }
-}
+                    data.nextAllow = false;
+                } else {
+                    nextEl.classList.remove('disabled');
 
-const appendPagesNumbers = nextEl => {
-    document.querySelectorAll('.page-number-item').forEach(el => el.remove());
+                    data.nextAllow = true;
+                }
+            }
 
-    let dots1 = false;
-    let dots2 = false;
+            const appendPagesNumbers = nextEl => {
+                document.querySelectorAll('.page-number-item').forEach(el => el.remove());
 
-    for (let i = 1; i <= data.maxPage; i++) {
-        if (data.page + 3 > i && data.page - 3 < i || i === 1 || i === data.maxPage) {
-            appendPageNumber(i, nextEl);
-        }
+                let dots1 = false;
+                let dots2 = false;
 
-        if (!(data.page + 4 > i)) dots1 = true;
-        if (!(data.page - 4 < i)) dots2 = true;
-    }
+                for (let i = 1; i <= data.maxPage; i++) {
+                    if (data.page + 3 > i && data.page - 3 < i || i === 1 || i === data.maxPage) {
+                        appendPageNumber(i, nextEl);
+                    }
 
-    const elements = document.querySelectorAll('.page-item');
+                    if (!(data.page + 4 > i)) dots1 = true;
+                    if (!(data.page - 4 < i)) dots2 = true;
+                }
 
-    if (dots1) appendPageNumber(0, elements[elements.length - 2]);
-    if (dots2) appendPageNumber(0, elements[2]);
-}
+                const elements = document.querySelectorAll('.page-item');
 
-const appendPageNumber = (index, nextEl) => {
-    const node = document.createElement('LI');
-    node.className = 'page-item page-number-item d-none d-sm-block';
+                if (dots1) appendPageNumber(0, elements[elements.length - 2]);
+                if (dots2) appendPageNumber(0, elements[2]);
+            }
 
-    node.onclick = () => { pageOnClick(index) };
+            const appendPageNumber = (index, nextEl) => {
+                const node = document.createElement('LI');
+                node.className = 'page-item page-number-item d-none d-sm-block';
 
-    node.innerHTML = `<a class="page-link ${index === data.page ? 'active' : ''}" href="#">${index}</a>`;
-    node.innerHTML = index > 0 ? node.innerHTML : '<span class="page-link">...</span>';
-    document.querySelector('#pagination > ul').insertBefore(node, nextEl);
-}
+                node.onclick = () => { pageOnClick(index) };
 
-const pageOnClick = index => {
-    if (index === 0) return;
+                node.innerHTML = `<a class="page-link ${index === data.page ? 'active' : ''}" href="#">${index}</a>`;
+                node.innerHTML = index > 0 ? node.innerHTML : '<span class="page-link">...</span>';
+                document.querySelector('#pagination > ul').insertBefore(node, nextEl);
+            }
 
-    data.page = index;
+            const pageOnClick = index => {
+                if (index === 0) return;
 
-    fetchMovies();
-}
+                data.page = index;
 
-document.getElementById('next-page').addEventListener('click', () => {
-    if (!data.nextAllow) return;
+                fetchMovies();
+            }
 
-    data.page++;
+            document.getElementById('next-page').addEventListener('click', () => {
+                if (!data.nextAllow) return;
 
-    fetchMovies();
-});
+                data.page++;
 
-document.getElementById('previous-page').addEventListener('click', () => {
-    if (!data.prevAllow) return;
+                fetchMovies();
+            });
 
-    data.page--;
+            document.getElementById('previous-page').addEventListener('click', () => {
+                if (!data.prevAllow) return;
 
-    fetchMovies();
-});
+                data.page--;
 
-window.search = e => {
-    const value = e.target.querySelector('input').value;
+                fetchMovies();
+            });
 
-    data.page = 1;
-    data.search = value;
+            window.search = e => {
+                const value = e.target.querySelector('input').value;
 
-    fetchMovies();
+                data.page = 1;
+                data.search = value;
 
-    e.target.querySelector('input').value = '';
-}
+                fetchMovies();
 
-fetchMovies();
+                e.target.querySelector('input').value = '';
+            }
+
+            fetchMovies();
     </script>
 </body>
 

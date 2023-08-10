@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OMDB</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style></style>
+  </head>
+  <body>
+    <div class="container mb-5 mt-5">
+      <form onsubmit="page=1; getData(event, 1)" class="input-group" id="form">
+        <!--getData funkcija iššaukiama submit'inus formą-->
+        <!--input-group klasė sugrupuoja kartu formos elementus-->
+        <input type="text" id="search" class="form-control" />
+        <!--paieškos laukelis-->
+        <button class="btn btn-warning">Search</button>
+      </form>
+    </div>
+    <div id="result" class="container"></div>
+    <nav class="container">
+      <ul class="pagination justify-content-center">
+        <li class="page-item">
+          <a
+            class="page-link disabled"
+            href="#"
+            onclick="previous(event)"
+            id="previous"
+            >Previous</a
+          >
+        </li>
+        <li class="page-item">
+          <a class="page-link" href="#" onclick="next(event)" id="next">Next</a>
+        </li>
+      </ul>
+    </nav>
+
+    <script>
+      let page = 1;
+      let results;
+
+      function getData(e, page) {
+        e.preventDefault();
+
+        let value = document.getElementById("search").value;
+        fetch(
+          `https://www.omdbapi.com/?apikey=4f0a9ce2&s=${value}&page=${page}`
+        )
+          .then((resp) => resp.json())
+          .then((resp) => {
+            console.log(resp);
+            const result = document.getElementById("result");
+            results = resp.totalResults;
+
+            let html = `<div class="row">`;
+            resp.Search.map((data) => {
+              html += `<div class="col-4">
+                                <a href="#" class="d-flex flex-column align-items-center">
+                                    <img src="${data.Poster}" alt="${data.Title}" />
+                                    <h3>${data.Title}</h3>
+                                </a>
+                            </div>`;
+            });
+
+            html += `</div>`;
+            result.innerHTML = html;
+          });
+        console.log(page);
+      }
+      let nextButton = document.getElementById("next");
+      let previousButton = document.getElementById("previous");
+      // next mygtukas
+      function next(e) {
+        e.preventDefault();
+        previousButton.classList.remove("disabled"); //kai paspaudžiame next mygtuką, previous tampa enabled
+        page++;
+        let calculated = Math.ceil(results / 10);
+        console.log(results);
+        console.log(calculated);
+        if (page >= calculated) {
+          page = calculated;
+          e.target.classList.add("disabled"); // kai pasiekiame puslapio pabaigą, next tampa disabled
+        }
+        console.log(e);
+        getData(e, page);
+      }
+      // previous mygtukas
+      function previous(e) {
+        e.preventDefault();
+        nextButton.classList.remove("disabled"); // kai paspaudžiame previous mygtuką, next tampa enabled
+        page--;
+        if (page <= 1) {
+          e.target.classList.add("disabled"); // kai pasiekiame pirmą puslapį, previous tampa disabled
+          page = 1;
+        }
+        getData(e, page);
+      }
+    </script>
+  </body>
+</html>
