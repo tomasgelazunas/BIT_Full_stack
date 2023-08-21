@@ -1,0 +1,82 @@
+@import url(https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css);
+
+body {
+  margin: 0;
+  font-family: system-ui;
+  color: white;
+}
+
+section {
+  padding: 90px 0;
+}
+
+header {
+  background: #28344b;
+}
+
+.home {
+  background: #28344b;
+  padding: 150px 0 90px 0;
+}
+
+.get-started-button {
+  display: inline-flex;
+  padding: 10px 20px;
+  border: 2px solid white;
+  border-radius: 25px;
+}
+
+.about {
+  background: #061739;
+}
+
+.service {
+  background: #003399;
+}
+
+.contact {
+  color: black;
+}
+
+footer {
+  border-top: 1px solid #8080805c;
+}
+
+p {
+  font-size: 14px;
+  max-width: 500px;
+  line-height: 25px;
+  color: #ffffffec;
+  letter-spacing: 1.5px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.about img {
+  max-width: 100%;
+  height: auto;
+}
+
+nav ul>li {
+  margin: 0px 20px;
+  text-transform: uppercase;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+ul .active {
+  border: 1px solid white;
+  border-radius: 25px;
+  padding: 0px 10px;
+}
