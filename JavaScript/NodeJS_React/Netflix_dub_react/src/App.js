@@ -7,6 +7,7 @@ import Mobile from "./components/Images/mobile.jpg";
 import Devices from "./components/Images/devices.png";
 import Kids from "./components/Images/kids.png";
 import FAQ from "./components/FAQ/FAQ";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
@@ -42,8 +43,8 @@ function App() {
         }}
       />
       <FAQ />
+      <Footer />
     </>
   );
 }
-
 export default App;
