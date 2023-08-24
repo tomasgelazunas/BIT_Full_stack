@@ -14,7 +14,6 @@
   background-repeat: no-repeat;
   border-bottom: 10px solid rgb(44, 44, 44);
 }
-
 .Mainsect {
   margin-top: 200px;
   padding-bottom: 200px;
@@ -31,13 +30,7 @@
   color: white;
   text-align: center;
 }
-h1 {
-  color: white;
-  text-align: center;
-  font-size: 48px;
-  font-weight: 900;
-}
-h2 {
+h1, h2 {
   color: white;
   text-align: center;
   font-size: 48px;
@@ -60,7 +53,7 @@ h3 {
   justify-content: center;
   align-items: center;
   border-radius: 5px;
-  line-height: 1.25rem;
+  line-height: 20px;
 }
 .form-select {
   background-color: transparent;
