@@ -1,6 +1,6 @@
 const LowerSect = (props) => {
   return (
-    <section className="blackSection py-5">
+    <section className="FAQSect py-5">
       <div className="container d-flex" style={props.style}>
         <div className="col-6 d-flex flex-column justify-content-center">
           <h2>{props.headingText}</h2>

@@ -83,17 +83,39 @@ input {
 
 /*Lower sections*/
 
-.blackSection h2 {
+.FAQSect h2 {
   font-size: 48px;
   text-align: left;
   font-weight: 900;
   color: white;
 }
-.blackSection p {
+.FAQSect p {
   color: white;
   font-size: 24px;
 }
-.blackSection {
+.FAQSect {
   background-color: rgb(0, 0, 0);
   border-bottom: 10px solid rgb(44, 44, 44);
+}
+
+/*FAQ cards*/
+
+.expanding {
+  margin-bottom: 5px;
+}
+.card {
+  background-color: rgb(45,45,45);
+  color: white;
+  padding: 20px;
+  font-size: 24px;
+  border-radius: 0;
+}
+.card:hover {
+  background-color: rgb(65,65,65);
+}
+.cardinfo {
+  background-color: rgb(45,45,45);
+  color: white;
+  padding: 10px;
+  font-size: 24px;
 }

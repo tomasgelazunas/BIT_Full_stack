@@ -6,6 +6,7 @@ import TV from "./components/Images/tv.png";
 import Mobile from "./components/Images/mobile.jpg";
 import Devices from "./components/Images/devices.png";
 import Kids from "./components/Images/kids.png";
+import FAQ from "./components/FAQ/FAQ";
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
           flexDirection: "row-reverse",
         }}
       />
+      <FAQ />
     </>
   );
 }
