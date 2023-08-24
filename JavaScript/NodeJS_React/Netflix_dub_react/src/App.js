@@ -44,6 +44,7 @@ function App() {
       />
       <FAQ />
       <Footer />
+
     </>
   );
 }
