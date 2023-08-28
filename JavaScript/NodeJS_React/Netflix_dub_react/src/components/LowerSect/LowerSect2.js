@@ -8,7 +8,7 @@ const LowerSect = (props) => {
         </div>
         <div className="col-6 img-video align-self-center mx-auto">
           <img src={props.src} className="img-fluid" />
-          <video src={props.video} autoPlay playsinline muted loop className="embed-responsive-item" style={{top: "24%", left: "17%", width:"65%"}}></video>
+          <video src={props.video2} autoPlay playsinline muted loop className="embed-responsive-item" style={{top: "14%", left: "17%", width:"65%"}}></video>
         </div>
       </div>
     </section>

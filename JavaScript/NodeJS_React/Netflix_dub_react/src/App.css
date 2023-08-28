@@ -12,6 +12,7 @@ body {
   rgba(12, 12, 12, 0.144) 10%,
   rgba(0, 0, 0, 0.8) 100%), url(./components/Images/netflix.jpg) ;
   background-repeat: no-repeat;
+  background-size: cover;
   border-bottom: 10px solid rgb(44, 44, 44);
 }
 .Mainsect {
@@ -140,4 +141,14 @@ footer p {
   margin-top: 2rem;
   margin-bottom: 0;
   padding-bottom: 3rem;
+}
+.FAQSect .img-video {
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+video  {
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
 }
