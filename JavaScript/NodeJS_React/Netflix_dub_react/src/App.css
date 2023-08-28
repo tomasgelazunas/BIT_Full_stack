@@ -142,12 +142,15 @@ footer p {
   margin-bottom: 0;
   padding-bottom: 3rem;
 }
+
+/*Video failo pozicionavimas*/
+
 .FAQSect .img-video {
   overflow: hidden;
   position: relative;
   z-index: 1;
 }
-video  {
+video {
   overflow: hidden;
   position: absolute;
   z-index: -1;
