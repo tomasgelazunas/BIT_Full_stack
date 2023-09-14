@@ -1,0 +1,6 @@
+<br />
+<b>Warning</b>:  scandir(./Photo.txt): The directory name is inval (code: 267) in <b>C:\xampp\htdocs\file_manager\index.php</b> on line <b>3</b><br />
+<br />
+<b>Warning</b>:  scandir(./Photo.txt): Failed to open directory: No such file or directory in <b>C:\xampp\htdocs\file_manager\index.php</b> on line <b>3</b><br />
+<br />
+<b>Warning</b>:  scandir(): (errno 2): No such file or directory in <b>C:\xampp\htdocs\file_manager\index.php</b> on line <b>3</b><br />
