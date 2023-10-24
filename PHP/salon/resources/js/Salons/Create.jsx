@@ -1,5 +1,4 @@
-import { useState } from 'react';
-import { useContext } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import { SalonContext } from '@/Salons/SalonProvider';
 
 export default function Create() {
@@ -8,13 +7,19 @@ export default function Create() {
     const [address, setAddress] = useState('');
     const [phone, setPhone] = useState('');
 
-    const { setSalonCreate } = useContext(SalonContext);
+    const { clearSalonInputs, setSalonClearInputs, setSalonStore } = useContext(SalonContext);
+
+    useEffect(_ => {
+        if (clearSalonInputs) {
+            setName('');
+            setAddress('');
+            setPhone('');
+            setSalonClearInputs(false);
+        }
+    }, [clearSalonInputs]);
 
     const create = _ => {
-        setSalonCreate({name, address, phone});
-        setName('');
-        setAddress('');
-        setPhone('');
+        setSalonStore({name, address, phone});
     }
 
     return (
